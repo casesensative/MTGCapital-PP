@@ -20,6 +20,7 @@ module.exports = {
     return res.status(200).send(req.session.user);
   },
   login: async (req, res, next) => {
+    console.log('login');
     const db = req.app.get('db');
     const {email, password} = req.body;
     const [user] = await db.auth.check_user(email);
@@ -30,7 +31,7 @@ module.exports = {
     if (auth) {
       delete user.password;
       req.session.user = user;
-      return res.status(200).send('User logged in.');
+      return res.status(200).send(req.session.user);
     } else {
       return res.status(401).send('Incorrect username or password.');
     }
