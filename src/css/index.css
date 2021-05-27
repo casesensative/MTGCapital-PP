@@ -20,8 +20,9 @@
 
 .loginheader h1 {
   font-family: "Gugi", cursive;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2.8rem;
+  color: white;
 }
 
 .loginheader h3 {
@@ -204,6 +205,127 @@ table th, table tr {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 2rem;
+}
+
+.siteheader {
+  width: 100vw;
+  height: 10vh;
+  background-color: #4B6787;
+  color: #e2e6f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.siteheader h1 {
+  font-family: "Gugi", cursive;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.siteheader .searchicon {
+  width: 40px;
+  height: 40px;
+}
+
+.siteheader .searchicon .searchicon1 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(196, 196, 196, 0.28);
+  border: 6px solid #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.siteheader .searchicon .searchicon2 {
+  position: relative;
+  left: 20px;
+  bottom: 8px;
+  width: 4px;
+  height: 0px;
+  border: 4px solid #FFFFFF;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger-container {
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger-container .topbun {
+  width: 40px;
+  height: 7px;
+  background: white;
+  margin-bottom: 4px;
+  margin-top: 3px;
+}
+
+.hamburger-container .burger {
+  width: 32px;
+  height: 7px;
+  background: white;
+  margin-bottom: 4px;
+}
+
+.hamburger-container .botbun {
+  width: 40px;
+  height: 7px;
+  background: white;
+}
+
+.dropdown-menu {
+  width: 100%;
+  height: 0rem;
+  background-color: #3D546E;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.dropdown-menu ul {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 6%;
+  padding-top: 3%;
+}
+
+.dropdown-menu ul li {
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  color: #e2e6f1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.dropdown-menu ul li:hover {
+  color: white;
+  text-shadow: 1px 1px 0px #85A5CB;
+}
+
+.dropdown-menu-active {
+  width: 100%;
+  height: 10rem;
 }
 
 footer {

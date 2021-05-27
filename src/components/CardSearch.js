@@ -2,8 +2,8 @@ import SearchResult from '../components/SearchResult';
 
 
 
-const CardSearch = () => {
-
+const CardSearch = (props) => {
+  // console.log(props);
 
   return (
     <section className="cardsearch">

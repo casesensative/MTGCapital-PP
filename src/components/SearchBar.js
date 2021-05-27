@@ -1,6 +1,13 @@
 import {useState} from 'react';
+import {withRouter} from 'react-router-dom';
+import {useContext} from 'react';
+import {SearchContext} from '../context/SearchContext';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+
+  const {location} = useContext(SearchContext);
+
+  console.log(location);
 
   const [search, setSearch] = useState('');
 
@@ -13,4 +20,6 @@ const SearchBar = () => {
   )
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
+
+

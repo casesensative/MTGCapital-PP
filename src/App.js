@@ -7,6 +7,7 @@ import Interests from './components/Interests';
 import CardSearch from './components/CardSearch';
 import SearchBar from './components/SearchBar';
 import SiteHeader from './components/SiteHeader';
+import routes from './routes';
 
 
 
@@ -16,8 +17,7 @@ function App() {
     <div className="App">
       <SiteHeader />
       {/* <Login /> */}
-      <SearchBar />
-      <CardSearch />
+      {routes}
       <Footer />
     </div>
   );

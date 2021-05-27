@@ -4,12 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {UserProvider} from './context/UserContext';
+import {SearchProvider} from './context/SearchContext';
+import {HashRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserProvider>
-      <App />
-    </UserProvider>
+    <Router>
+      <SearchProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </SearchProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
