@@ -87,10 +87,123 @@
           box-shadow: 2px 2px 0 4px #e2e6f1;
 }
 
+table {
+  margin: auto;
+  margin-top: 1rem;
+  color: #e2e6f1;
+  border: 1px solid #e2e6f1;
+  font-family: "KoHo", sans-serif;
+}
+
+table th, table tr {
+  padding: .3rem;
+}
+
+.pageheading {
+  width: 100vw;
+  height: 7vh;
+  background-color: #85A5CB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pageheading h3 {
+  font-family: "Libre Barcode 39 Text", cursive;
+  font-size: 3rem;
+  color: #e2e6f1;
+}
+
+.filterbar {
+  width: 80vw;
+  height: 4vh;
+  background-color: #85A5CB;
+  margin: auto;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.filterbar .filter {
+  width: 75%;
+  height: 100%;
+  background-color: #85A5CB;
+  border: none;
+  text-align: left;
+}
+
+.filterbar button {
+  all: unset;
+  margin-right: 3%;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  color: #e2e6f1;
+}
+
+.searchbar {
+  position: absolute;
+  top: 6rem;
+  margin-left: 10%;
+  width: 80vw;
+  height: 2rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.searchbar input {
+  border: none;
+  height: 92%;
+  width: 75%;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  padding-left: 8px;
+}
+
+.searchbar button {
+  all: unset;
+  margin-right: .5rem;
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+}
+
 .interestspage {
   width: 100vw;
   height: 80vh;
   background-color: #678EBB;
+}
+
+.cardsearch {
+  width: 100vw;
+  height: 80vh;
+  background-color: #678EBB;
+}
+
+.cardsearch .results {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
 }
 
 footer {

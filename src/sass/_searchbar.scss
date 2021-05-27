@@ -1,0 +1,31 @@
+
+.searchbar {
+  position: absolute;
+  top: 6rem;
+  margin-left: 10%;
+  width: 80vw;
+  height: 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    border: none;
+    height: 92%;
+    width: 75%;
+    font-family: $font-sub;
+    font-weight: 300;
+    font-size: 1rem;
+    padding-left: 8px;
+  }
+  button {
+    all: unset;
+    margin-right: .5rem;
+    text-align: center;
+    font-family: $font-sub;
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+  }
+}

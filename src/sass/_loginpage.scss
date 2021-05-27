@@ -1,0 +1,64 @@
+.loginheader {
+  width: 100vw;
+  height:10vh;
+  background-color: $dark-color;
+  @include flexCenter;
+  flex-direction: column;
+  color: $white;
+
+
+  h1 {
+    @include logo;
+  }
+
+  h3 {
+    font-family: $font-sub;
+    font-weight: 300;
+  }
+
+  .line {
+    width: 100vw;
+    height: 6px;
+    background-color: $white;
+    position: relative;
+    bottom: -10px;
+  }
+}
+
+
+.loginpage {
+  width: 100vw;
+  height: 80vh;
+  background-color: $primary-color;
+
+  .loginform {
+    width: 100%;
+    height: 100%;
+    @include flexCenter;
+    flex-flow: column wrap;
+
+    input {
+      width: 80%;
+      height: 5%;
+      margin-bottom: 4%;
+      text-align: center;
+    }
+
+    button {
+      all: unset;
+      width: 30%;
+      height: 5%;
+      text-align: center;
+      margin-bottom: 4%;
+      font: normal normal 300 1.1rem $font-sub;
+      background-color: $darkest-color;
+      color: $white;
+      @include transition-ease;
+
+      &:hover {
+        border-radius: 6px;
+        box-shadow: 2px 2px 0 4px rgba(226,230,241, 1);
+      }
+    }
+  }
+}

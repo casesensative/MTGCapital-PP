@@ -1,0 +1,15 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+
+@mixin logo {
+  font-family: $font-logo;
+  font-weight: 700;
+  font-size: 2.8rem;
+};
+
+@mixin transition-ease {
+  transition: all 0.5s ease-out;
+};

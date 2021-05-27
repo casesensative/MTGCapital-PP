@@ -1,0 +1,38 @@
+.pageheading {
+  width: 100vw;
+  height: 7vh;
+  background-color: $light-color;
+  display: flex;
+  justify-content: center;
+
+  h3 {
+    font-family: $font-barcode;
+    font-size: 3rem;
+    color: $white;
+  }
+}
+
+.filterbar {
+  width: 80vw;
+  height: 4vh;
+  background-color: $light-color;
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  
+  .filter {
+    width: 75%;
+    height: 100%;
+    background-color: $light-color;
+    border: none;
+    text-align: left;
+  }
+  button {
+    all: unset;
+    margin-right: 3%;
+    font-family: $font-sub;
+    font-weight: 300;
+    color: $white;
+  }
+}
