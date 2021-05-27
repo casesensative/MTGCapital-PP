@@ -94,10 +94,16 @@ table {
   color: #e2e6f1;
   border: 1px solid #e2e6f1;
   font-family: "KoHo", sans-serif;
+  font-size: 1.2rem;
 }
 
 table th, table tr {
   padding: .3rem;
+}
+
+table td {
+  padding: .2rem;
+  overflow: hidden;
 }
 
 .pageheading {
@@ -184,6 +190,56 @@ table th, table tr {
   color: black;
 }
 
+.searchresult {
+  width: 80%;
+  height: 10rem;
+  background-color: #4B6787;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.searchresult .resultcontainer {
+  width: 90%;
+  height: 80%;
+  background-color: #4B6787;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchresult .resultcontainer img {
+  width: 80px;
+  float: right;
+}
+
+.searchresult .addbar {
+  height: 20%;
+  width: 100%;
+  background-color: #3D546E;
+  text-align: center;
+  line-height: 30px;
+}
+
+.searchresult .addbar p {
+  font-family: "Chivo", sans-serif;
+  color: white;
+}
+
 .interestspage {
   width: 100vw;
   height: 80vh;
@@ -201,10 +257,14 @@ table th, table tr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .siteheader {

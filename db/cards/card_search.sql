@@ -1,2 +1,2 @@
 select * from cards
-where card_name
+where lower(card_name) like '%' || lower($1) || '%';

@@ -2,10 +2,11 @@ import {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 import {useContext} from 'react';
 import {SearchContext} from '../context/SearchContext';
+import {axios} from 'axios';
 
 const SearchBar = (props) => {
 
-  const {location} = useContext(SearchContext);
+  const {location, searchFunction} = useContext(SearchContext);
 
   console.log(location);
 
@@ -15,7 +16,7 @@ const SearchBar = (props) => {
     <div className="searchbar">
       <input type="text" name="searchbar" value={search} 
       onChange={(e) => setSearch(e.target.value)}/>
-      <button>SEARCH</button>
+      <button onClick={() => searchFunction(search)}>SEARCH</button>
     </div>
   )
 }

@@ -4,6 +4,7 @@
 @import './tables';
 @import './pagehead-filter';
 @import './searchbar';
+@import './searchresult';
 
 
 
@@ -22,8 +23,9 @@
   .results {
     width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
     margin-top: 2rem;
+    flex-direction: column;
   }
 }
 

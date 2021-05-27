@@ -1,0 +1,37 @@
+.searchresult {
+  width:80%;
+  height:10rem;
+  background-color: $dark-color;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  .resultcontainer {
+    width: 90%;
+    height: 80%;
+    background-color: $dark-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 80px;
+      float: right;
+    }
+  }
+
+  .addbar {
+    height: 20%;
+    width: 100%;
+    background-color: $darkest-color;
+    text-align: center;
+    line-height: 30px;
+
+    p {
+      font-family: $font-sub;
+      color: white;
+    }
+    
+  }
+}

@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 require('dotenv').config();
 const authControl = require('./controllers/authcontroller');
+const searchControl = require('./controllers/searchcontroller');
 
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
@@ -36,3 +37,8 @@ massive({
 app.post('/auth/register', authControl.register);
 app.post('/auth/login', authControl.login);
 app.delete('/auth/logout', authControl.logout);
+
+
+//CARDSEARCH ENDPOINTS
+
+app.get('/api/cardsearch/:searchtext', searchControl.card_search);
