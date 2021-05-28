@@ -7,6 +7,7 @@ export const SearchContext = createContext();
 export const SearchProvider = (props) => {
 
   const [results, setResults] = useState([]);
+  const [filter, setFilter] = useState('');
 
   let location = useLocation();
   let path = location.pathname;
@@ -27,7 +28,9 @@ export const SearchProvider = (props) => {
     <SearchContext.Provider value={{
       location,
       searchFunction,
-      results
+      results,
+      filter,
+      setFilter
     }}>
       {props.children}
     </SearchContext.Provider>

@@ -1,15 +1,16 @@
-
+import {useState} from 'react';
 
 const SearchResult = (props) => {
 
+  const [imgswitch, setImgswitch] = useState(false);
 
   return (
     <div className="searchresult">
       <div className="resultcontainer">
-        <table style={{border: 'none'}}>
+        <table style={{border: 'none', tableLayout: 'fixed', width: '90%'}}>
           <tbody>
             <tr>
-              <td>Name:</td>
+              <td style={{width: '40px'}}>Name:</td>
               <td>{props.name}</td>
             </tr>
             <tr>
@@ -17,17 +18,22 @@ const SearchResult = (props) => {
               <td>{props.set}</td>
             </tr>
             <tr>
-              <td>Price:</td>
+              <td>{props.price ? 'Price:' : null}</td>
               <td>{props.price}</td>
             </tr>
             <tr>
-              <td>FPrice:</td>
+              <td>{props.foilprice ? 'FPrice:' : null}</td>
               <td>{props.foilprice}</td>
             </tr>
           </tbody>
         </table>
-        <img src={props.card_img} />
+        <img src={!imgswitch ? props.card_img : props.card_img_b ? props.card_img_b : props.card_img} 
+        onMouseEnter={() => setImgswitch(true)} 
+        onMouseLeave={() => setImgswitch(false)} 
+        />
       </div>
+      {/* <button>{props.card_img_b ? 'flip' : null}</button> */}
+      {props.card_img_b ? <button onClick={() => setImgswitch(!imgswitch)}>FLIP</button> : null}
       <div className="addbar">
         <p>ADD</p>
       </div>

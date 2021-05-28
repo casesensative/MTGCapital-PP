@@ -20,6 +20,7 @@
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   
   .filter {
     width: 75%;
@@ -27,6 +28,16 @@
     background-color: $light-color;
     border: none;
     text-align: left;
+    display: flex;
+    align-items: center;
+    font-family: $font-copy;
+    
+    p {
+      margin-left: 10px;
+      color: $white;
+      font-style: italic;
+      margin-bottom: 2px;
+    }
   }
   button {
     all: unset;

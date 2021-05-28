@@ -6,17 +6,28 @@ import {axios} from 'axios';
 
 const SearchBar = (props) => {
 
-  const {location, searchFunction} = useContext(SearchContext);
+  const {location, searchFunction, setFilter} = useContext(SearchContext);
 
   console.log(location);
 
   const [search, setSearch] = useState('');
 
+  const cardSearch = (searchinput) => {
+    console.log(typeof(searchinput));
+    let searchtext = searchinput.split(' ');
+    console.log(searchtext);
+    setFilter(searchinput);
+    searchFunction(searchinput);
+    props.setSearchbar(null);
+  }
+
   return (
     <div className="searchbar">
-      <input type="text" name="searchbar" value={search} 
-      onChange={(e) => setSearch(e.target.value)}/>
-      <button onClick={() => searchFunction(search)}>SEARCH</button>
+      <form onSubmit={() => cardSearch(search)}>
+        <input type="text" name="searchbar" value={search}
+        onChange={(e) => setSearch(e.target.value)} autoFocus />
+        <button>SEARCH</button>
+      </form>
     </div>
   )
 }

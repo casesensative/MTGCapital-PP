@@ -8,7 +8,7 @@ const SiteHeader = () => {
 
   return (
     <header>
-      {searchbar ? <SearchBar /> : null}
+      {searchbar ? <SearchBar setSearchbar={setSearchbar} /> : null}
       <div className="siteheader">
         <div className="hamburger-container" onClick={() => setMenu(!menu)}>
           <div className="topbun"></div>
