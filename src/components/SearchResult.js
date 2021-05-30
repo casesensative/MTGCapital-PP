@@ -1,9 +1,12 @@
 import {useState} from 'react';
 import axios from 'axios';
+import AddModal from '../components/AddModal/AddModal';
 
 const SearchResult = (props) => {
 
   const [imgswitch, setImgswitch] = useState(false);
+
+  const [modalshow, setModalShow] = useState(false);
 
   const addInterest = (card_id, buyprice, amount) => {
     axios.post('/api/interest', {card_id, buyprice, amount}).then(res => {
@@ -41,8 +44,13 @@ const SearchResult = (props) => {
       </div>
       {props.card_img_b ? <button onClick={() => setImgswitch(!imgswitch)}>FLIP</button> : null}
       <div className="addbar">
-        <button>ADD</button>
+        <button onClick={() => setModalShow(true)}>ADD</button>
       </div>
+      <AddModal modalshow={modalshow} setModalShow={setModalShow} 
+      card_id={props.key} 
+      addInterestFn={addInterest} 
+      card_name={props.name} 
+      set_name={props.set} />
     </div>
   )
 }

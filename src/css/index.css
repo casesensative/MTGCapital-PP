@@ -286,6 +286,212 @@ table td {
   color: white;
 }
 
+.searchresult .addbar button {
+  all: unset;
+  color: #e2e6f1;
+  font-family: "KoHo", sans-serif;
+  font-weight: 300;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.searchresult .addbar button:hover {
+  color: white;
+  text-shadow: 1px 1px 0px #85A5CB;
+}
+
+.addmodal {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.addmodal .modal {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-radius: 4px;
+  width: 300px;
+  max-width: 100%;
+  height: 250px;
+  max-height: 100%;
+  z-index: 100;
+  background: #85A5CB;
+  -webkit-box-shadow: 0 0 30px 6px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0 30px 6px rgba(0, 0, 0, 0.9);
+}
+
+.addmodal .modal .modal-content {
+  background-color: #4B6787;
+  font-family: "KoHo", sans-serif;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  width: 90%;
+  height: 70%;
+  overflow: hidden;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 18px;
+}
+
+.addmodal .modal .modal-content .cardinfo {
+  width: 100%;
+  padding: 4px;
+  border-radius: 1px;
+}
+
+.addmodal .modal .modal-content .addcard {
+  width: 100%;
+  height: 60%;
+  margin: 8px 0px;
+}
+
+.addmodal .modal .modal-content .addcard input[name=card_amount] {
+  margin-top: 2px;
+  width: 40px;
+  text-align: center;
+}
+
+.addmodal .modal .modal-content .addcard input[name=buyprice] {
+  margin-top: 2px;
+  width: 80px;
+  text-align: center;
+}
+
+.addmodal .modal .modal-content .react-add {
+  width: 36px;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addmodal .modal .modal-content .add-button {
+  all: unset;
+  width: 60px;
+  height: 30px;
+  color: #e2e6f1;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: .8rem;
+  border-radius: 2px;
+  border: 1px solid #85A5CB;
+  background-color: #3D546E;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.addmodal .modal .modal-content .add-button:hover {
+  color: white;
+  text-shadow: 1px 1px 0px #85A5CB;
+}
+
+.modal-closed {
+  display: none;
+}
+
+.close-container {
+  position: relative;
+  margin: 6px 4px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.close-container .leftright {
+  height: 4px;
+  width: 30px;
+  position: absolute;
+  margin-top: 13px;
+  background-color: #678EBB;
+  border-radius: 2px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.close-container .rightleft {
+  height: 4px;
+  width: 30px;
+  position: absolute;
+  margin-top: 13px;
+  background-color: #678EBB;
+  border-radius: 2px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.close-container .close {
+  margin: 60px 0 0 5px;
+  position: absolute;
+}
+
+.close-container:hover .leftright {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background-color: #3D546E;
+}
+
+.close-container:hover .rightleft {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: #3D546E;
+}
+
 .interestspage {
   width: 100vw;
   height: 80vh;

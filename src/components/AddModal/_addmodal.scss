@@ -1,0 +1,151 @@
+.addmodal {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 4px;
+    width: 300px;
+    max-width: 100%;
+    height: 250px;
+    max-height: 100%;
+    z-index: 100;
+    background: $light-color;
+    box-shadow: 0 0 30px 6px rgba(0, 0, 0, 0.9);
+
+    .modal-content {
+      background-color: $dark-color;
+      font-family: $font-copy;
+      text-align: center;
+      padding: 10px;
+      color: white;
+      width: 90%;
+      height: 70%;
+      overflow: hidden;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 18px;
+
+      .cardinfo {
+        width: 100%;
+        padding: 4px;
+        border-radius: 1px;
+      }
+
+      .addcard {
+        width: 100%;
+        height: 60%;
+        margin: 8px 0px;
+
+        input[name=card_amount] {
+          margin-top: 2px;
+          width: 40px;
+          text-align: center;
+        }
+        input[name=buyprice] {
+          margin-top: 2px;
+          width: 80px;
+          text-align: center;
+        }
+      
+      }
+
+      .react-add {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .add-button {
+        all: unset;
+        width: 60px;
+        height: 30px;
+        color: $white;
+        font-family: $font-sub;
+        font-weight: 300;
+        font-size: .8rem;
+        border-radius: 2px;
+        border: 1px solid $light-color;
+        background-color: $darkest-color;
+        @include transition-ease;
+
+        &:hover {
+          color: white;
+          text-shadow: 1px 1px 0px $light-color;
+        }
+      }
+    }
+  }
+}
+
+
+.modal-closed {
+  display: none;
+}
+
+.close-container{
+  position: relative;
+  margin: 6px 4px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+
+  .leftright{
+    height: 4px;
+    width: 30px;
+    position: absolute;
+    margin-top: 13px;
+    background-color: $primary-color;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+  }
+  
+  .rightleft{
+    height: 4px;
+    width: 30px;
+    position: absolute;
+    margin-top: 13px;
+    background-color: $primary-color;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+  }
+  
+  .close{
+    margin: 60px 0 0 5px;
+    position: absolute;
+  }
+  
+  &:hover .leftright{
+    transform: rotate(-45deg);
+    background-color: $darkest-color;
+  }
+  &:hover .rightleft{
+    transform: rotate(45deg);
+    background-color: $darkest-color;
+  }
+}
+
+

@@ -50,6 +50,19 @@
       font-family: $font-sub;
       color: white;
     }
+
+    button {
+      all: unset;
+      color: $white;
+      font-family: $font-copy;
+      font-weight: 300;
+      @include transition-ease;
+
+      &:hover {
+        color: white;
+        text-shadow: 1px 1px 0px $light-color;
+      }
+    }
     
   }
 }
