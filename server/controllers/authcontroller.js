@@ -40,5 +40,13 @@ module.exports = {
   logout: async (req, res, next) => {
     req.session.destroy();
     res.sendStatus(200);
+  },
+  getUser: (req, res) => {
+    const user = req.session.user;
+    if (user) {
+      return res.status(200).send(user);
+    } else {
+      return res.status(511).send('User not logged in.');
+    }
   }
 };

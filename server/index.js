@@ -4,6 +4,8 @@ const session = require('express-session');
 require('dotenv').config();
 const authControl = require('./controllers/authcontroller');
 const searchControl = require('./controllers/searchcontroller');
+const auth = require('./middleware/authCheck');
+const interestControl = require('./controllers/interestcontroller');
 
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
@@ -37,8 +39,13 @@ massive({
 app.post('/auth/register', authControl.register);
 app.post('/auth/login', authControl.login);
 app.delete('/auth/logout', authControl.logout);
+app.get('/auth/getuser', authControl.getUser);
 
 
 //CARDSEARCH ENDPOINTS
 
 app.get('/api/cardsearch/:searchtext', searchControl.card_search);
+
+//INTEREST ENDPOINTS
+
+app.post('/api/interest', auth.authCheck, interestControl.add_interest)

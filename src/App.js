@@ -1,5 +1,6 @@
 import './css/reset.css';
 import './css/index.css';
+import {useLocation} from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/Login';
 import Footer from './components/Footer';
@@ -13,8 +14,12 @@ import routes from './routes';
 
 
 function App() {
+
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="App">
+      {/* {location.pathname = "/" ? <Header /> : <SiteHeader />} */}
       <SiteHeader />
       {/* <Login /> */}
       {routes}

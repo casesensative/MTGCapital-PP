@@ -15,14 +15,14 @@ export const UserProvider = (props) => {
     }).catch(err => alert(err.response.data));
   }
 
-  const loginUser = (email, password) => {
-    axios.post('/auth/login', {email, password})
+  const loginUser = async (email, password) => {
+    await axios.post('/auth/login', {email, password})
     .then(user => {
       setUser(user.data);
       console.log(user.data);
     }).catch(err => console.log(err));
   }
-
+  
     return (  
     <UserContext.Provider value={{
         user,

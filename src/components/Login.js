@@ -2,9 +2,9 @@ import {useState} from 'react';
 import {useContext} from 'react';
 import {UserContext} from '../context/UserContext';
 
-const Login = () => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+const Login = (props) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
 
   const {registerUser, loginUser} = useContext(UserContext);
@@ -22,13 +22,14 @@ const Login = () => {
     }
   }
   
-  const login = (e, email, password) => {
+  const login = async (e, email, password) => {
     e.preventDefault();
     if (email && password) {
-      loginUser(email, password);
+      await loginUser(email, password);
       setEmail('');
       setPassword('');
       setPhone('');
+      props.history.push('/search')
     } else {
       return alert('You must enter an email address and password.')
     }

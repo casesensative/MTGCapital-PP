@@ -1,16 +1,24 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {withRouter} from 'react-router-dom';
 import {useContext} from 'react';
 import {SearchContext} from '../context/SearchContext';
+import {UserContext} from '../context/UserContext';
 import {axios} from 'axios';
 
 const SearchBar = (props) => {
 
-  const {location, searchFunction, setFilter} = useContext(SearchContext);
-
-  console.log(location);
-
+  const {searchFunction, setFilter} = useContext(SearchContext);
+  const {user} = useContext(UserContext);
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    if (!user) {
+      props.history.push('/');
+      alert('Please log in.');
+    } else {
+      console.log(user);
+    }
+  }, [])
 
   const cardSearch = (searchinput) => {
     console.log(typeof(searchinput));

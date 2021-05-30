@@ -5,6 +5,15 @@ create table users (
   phone varchar(10)
 );
 
+create table interests (
+    interest_id serial primary key,
+    user_id int references users(user_id),
+    card_id int references cards(card_id),
+    buyprice decimal,
+    amount int,
+    date_added timestamp  
+);
+
 
 -- create table cards (
 --   card_id serial primary key,
