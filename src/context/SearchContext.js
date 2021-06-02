@@ -30,7 +30,8 @@ export const SearchProvider = (props) => {
       searchFunction,
       results,
       filter,
-      setFilter
+      setFilter,
+      setResults
     }}>
       {props.children}
     </SearchContext.Provider>

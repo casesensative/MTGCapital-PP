@@ -18,3 +18,21 @@ table {
     white-space: nowrap;
   }
 }
+
+
+.intereststable {
+  width: 90%;
+  table-layout: fixed;
+  overflow: hidden;
+  font-family: $font-copy;
+  font-size: .7rem;
+  border: none;
+
+  thead {
+    text-align: left;
+  }
+}
+
+.interestrow {
+
+}

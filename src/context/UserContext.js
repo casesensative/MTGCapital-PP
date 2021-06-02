@@ -1,9 +1,14 @@
 import {createContext, useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
+
+
 
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
+
+  const history = useHistory();
 
   const [user, setUser] = useState(null);
 
@@ -11,7 +16,7 @@ export const UserProvider = (props) => {
     axios.post('/auth/register', {email, password})
     .then(user => {
       setUser(user.data);
-      //PUSH TO INTERESTS
+      history.push('/search');
     }).catch(err => alert(err.response.data));
   }
 
@@ -22,13 +27,23 @@ export const UserProvider = (props) => {
       console.log(user.data);
     }).catch(err => console.log(err));
   }
+
+  const getUser = async () => {
+    await axios.get('/auth/getuser').then(user => {
+      setUser(user.data);
+    }).catch(err => {
+      history.push('/');
+      setUser(null);
+    })
+  }
   
     return (  
     <UserContext.Provider value={{
         user,
         setUser,
         registerUser,
-        loginUser
+        loginUser,
+        getUser
       }}>
         {props.children}
       </UserContext.Provider>

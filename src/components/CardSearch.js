@@ -8,13 +8,14 @@ import axios from 'axios';
 
 const CardSearch = (props) => {
 
-  const {results, filter, setFilter} = useContext(SearchContext);
-  const {user, setUser} = useContext(UserContext);
+  const {results, filter, setFilter, setResults} = useContext(SearchContext);
   // const [mresults, setMresults] = useState([]);
-  console.log(user);
+  
   let mappedResults = results.map(card => {
     return (
-      <SearchResult key={card.card_id} name={card.card_name} 
+      <SearchResult key={card.card_id} 
+                    card_id={card.card_id} 
+                    name={card.card_name} 
                     set={card.card_set} card_img={card.imgurl_f} 
                     card_img_b={card.imgurl_b} foilprice={card.foilprice} 
                     price={card.price} purchase={card.purchaseurl} />
@@ -22,15 +23,10 @@ const CardSearch = (props) => {
   });
 
   useEffect(() => {
-    axios.get('/auth/getuser').then(user => {
-      if (!user) {
-        props.history.push('/');
-        alert('Please login.')
-      } else {
-        setUser(user);
-      } 
-    })
-  }, [])
+    setResults([]);
+  }, []);
+
+
 
   // useEffect(() => {
   //   let mappedResults = results.map(card => {

@@ -113,7 +113,8 @@
     margin-left: 6%;
     padding-top: 3%;
 
-    li {
+    a {
+      text-decoration: none;
       font-family: $font-sub;
       font-weight: 300;
       color: $white;
@@ -133,8 +134,13 @@
 }
 
 
+
 footer {
   width: 100vw;
   height: 10vh;
   background-color: $dark-color;
+}
+
+.nodisplay {
+  display: none;
 }

@@ -29,9 +29,9 @@ const Login = (props) => {
       setEmail('');
       setPassword('');
       setPhone('');
-      props.history.push('/search')
+      props.history.push('/interests');
     } else {
-      return alert('You must enter an email address and password.')
+      return alert('You must enter an email address and password.');
     }
   }
 
@@ -41,7 +41,7 @@ const Login = (props) => {
         <input type='text' name='email' 
         value={email} onChange={(e) => setEmail(e.target.value)} 
         placeholder='Enter your email address'/>
-        <input type='text' name='password' 
+        <input type='password' name='password' 
         value={password} onChange={(e) => setPassword(e.target.value)} 
         placeholder='Enter your password'/>
         <button type='submit' name='login' onClick={(e) => login(e, email, password)}>LOGIN</button>

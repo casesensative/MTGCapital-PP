@@ -11,6 +11,7 @@ create table interests (
     card_id int references cards(card_id),
     buyprice decimal,
     amount int,
+    isfoil boolean,
     date_added timestamp  
 );
 

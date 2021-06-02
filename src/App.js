@@ -13,15 +13,16 @@ import routes from './routes';
 
 
 
-function App() {
+function App(props) {
+
+
 
   const location = useLocation();
   console.log(location);
+
   return (
     <div className="App">
-      {/* {location.pathname = "/" ? <Header /> : <SiteHeader />} */}
       <SiteHeader />
-      {/* <Login /> */}
       {routes}
       <Footer />
     </div>

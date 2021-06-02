@@ -107,6 +107,19 @@ table td {
   white-space: nowrap;
 }
 
+.intereststable {
+  width: 90%;
+  table-layout: fixed;
+  overflow: hidden;
+  font-family: "KoHo", sans-serif;
+  font-size: .7rem;
+  border: none;
+}
+
+.intereststable thead {
+  text-align: left;
+}
+
 .pageheading {
   width: 100vw;
   height: 7vh;
@@ -238,6 +251,11 @@ table td {
   border-radius: 6px;
 }
 
+.searchresult p {
+  font-family: "Chivo", sans-serif;
+  margin-top: 4px;
+}
+
 .searchresult .resultcontainer {
   width: 90%;
   height: 80%;
@@ -340,7 +358,7 @@ table td {
   border-radius: 4px;
   width: 300px;
   max-width: 100%;
-  height: 250px;
+  height: 280px;
   max-height: 100%;
   z-index: 100;
   background: #85A5CB;
@@ -384,6 +402,7 @@ table td {
 }
 
 .addmodal .modal .modal-content .addcard input[name=card_amount] {
+  margin-left: 76px;
   margin-top: 2px;
   width: 40px;
   text-align: center;
@@ -436,8 +455,8 @@ table td {
 .close-container {
   position: relative;
   margin: 6px 4px;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -451,7 +470,7 @@ table td {
 
 .close-container .leftright {
   height: 4px;
-  width: 30px;
+  width: 20px;
   position: absolute;
   margin-top: 13px;
   background-color: #678EBB;
@@ -464,7 +483,7 @@ table td {
 
 .close-container .rightleft {
   height: 4px;
-  width: 30px;
+  width: 20px;
   position: absolute;
   margin-top: 13px;
   background-color: #678EBB;
@@ -490,6 +509,24 @@ table td {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   background-color: #3D546E;
+}
+
+.foilcheckbox {
+  display: inline;
+  text-align: center;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+
+.foilcheckbox p {
+  display: inline;
+  vertical-align: top;
+}
+
+.foilcheckbox input {
+  display: inline;
+  width: 20px;
+  height: 20px;
 }
 
 .interestspage {
@@ -623,7 +660,8 @@ table td {
   padding-top: 3%;
 }
 
-.dropdown-menu ul li {
+.dropdown-menu ul a {
+  text-decoration: none;
   font-family: "Chivo", sans-serif;
   font-weight: 300;
   color: #e2e6f1;
@@ -631,7 +669,7 @@ table td {
   transition: all 0.5s ease-out;
 }
 
-.dropdown-menu ul li:hover {
+.dropdown-menu ul a:hover {
   color: white;
   text-shadow: 1px 1px 0px #85A5CB;
 }
@@ -645,5 +683,9 @@ footer {
   width: 100vw;
   height: 10vh;
   background-color: #4B6787;
+}
+
+.nodisplay {
+  display: none;
 }
 /*# sourceMappingURL=index.css.map */
