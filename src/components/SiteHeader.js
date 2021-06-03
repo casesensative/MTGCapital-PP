@@ -1,6 +1,7 @@
 import {useState, useContext, useEffect} from 'react';
 import SearchBar from '../components/SearchBar';
 import {UserContext} from '../context/UserContext';
+import {SearchContext} from '../context/SearchContext';
 import {withRouter, Link, useLocation} from 'react-router-dom';
 import axios from 'axios';
 
@@ -8,15 +9,12 @@ import axios from 'axios';
 const SiteHeader = (props) => {
 
   const [menu, setMenu] = useState(false);
-  const [searchbar, setSearchbar] = useState(false);
   const location = useLocation();
   const {user, setUser, getUser} = useContext(UserContext);
+  const {searchbar, setSearchbar} = useContext(SearchContext);
 
   useEffect(() => {
     getUser();
-    if (!user) {
-
-    }
     // axios.get('/auth/getuser').then(user => {
     //   if (!user) {
     //     props.history.push('/');

@@ -67,6 +67,7 @@
   height: 5%;
   margin-bottom: 4%;
   text-align: center;
+  font-size: 16px;
 }
 
 .loginpage .loginform button {
@@ -198,6 +199,8 @@ table td {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-radius: 0px;
+  border: 1px solid black;
 }
 
 .searchbar form {
@@ -213,9 +216,9 @@ table td {
 }
 
 .searchbar form input {
-  border: none;
-  height: 92%;
-  width: 75%;
+  border-radius: 0px;
+  height: 70%;
+  width: 70%;
   font-family: "Chivo", sans-serif;
   font-weight: 300;
   font-size: 1rem;
@@ -224,13 +227,14 @@ table td {
 
 .searchbar form button {
   all: unset;
-  margin-right: .5rem;
+  width: 30%;
+  height: 2rem;
   text-align: center;
   font-family: "Chivo", sans-serif;
   font-weight: 300;
   font-size: 1rem;
-  background-color: white;
-  color: black;
+  background-color: #3D546E;
+  color: white;
 }
 
 .searchresult {
@@ -529,15 +533,21 @@ table td {
   height: 20px;
 }
 
-.interestspage {
+.interestsmobile {
   width: 100vw;
   height: 80vh;
   background-color: #678EBB;
 }
 
+.interestspage {
+  width: 100vw;
+  height: 70vh;
+  background-color: #678EBB;
+}
+
 .cardsearch {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   background-color: #678EBB;
   overflow: scroll;
 }
@@ -681,7 +691,7 @@ table td {
 
 footer {
   width: 100vw;
-  height: 10vh;
+  height: 6.2vh;
   background-color: #4B6787;
 }
 

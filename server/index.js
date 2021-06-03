@@ -50,3 +50,4 @@ app.get('/api/cardsearch/:searchtext', searchControl.card_search);
 
 app.post('/api/interest', auth.authCheck, interestControl.add_interest);
 app.get('/api/interests/:user_id', auth.authCheck, interestControl.get_interests);
+app.get('/api/interests/:user_id/:searchtext', auth.authCheck, interestControl.search_interests);

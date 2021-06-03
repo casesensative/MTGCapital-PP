@@ -8,6 +8,8 @@
   background-color: white;
   display: flex;
   justify-content: space-between;
+  border-radius: 0px;
+  border: 1px solid black;
 
   form {
     width: 100%;
@@ -18,23 +20,25 @@
 
 
     input {
-      border: none;
-      height: 92%;
-      width: 75%;
+      border-radius: 0px;
+      height: 70%;
+      width: 70%;
       font-family: $font-sub;
       font-weight: 300;
       font-size: 1rem;
       padding-left: 8px;
     }
+
     button {
       all: unset;
-      margin-right: .5rem;
+      width: 30%;
+      height: 2rem;
       text-align: center;
       font-family: $font-sub;
       font-weight: 300;
       font-size: 1rem;
-      background-color: white;
-      color: black;
+      background-color: $darkest-color;
+      color: white;
     }
 
   }

@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useContext} from 'react';
 import {UserContext} from '../context/UserContext';
+import {SearchContext} from '../context/SearchContext';
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
@@ -8,6 +9,7 @@ const Login = (props) => {
   const [phone, setPhone] = useState('');
 
   const {registerUser, loginUser} = useContext(UserContext);
+  const {setSearchbar} = useContext(SearchContext);
  
 
   const register = (e, email, password) => {
@@ -29,11 +31,12 @@ const Login = (props) => {
       setEmail('');
       setPassword('');
       setPhone('');
-      props.history.push('/interests');
     } else {
       return alert('You must enter an email address and password.');
     }
   }
+
+  setSearchbar(false);
 
   return (
     <section className="loginpage">

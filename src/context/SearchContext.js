@@ -8,6 +8,7 @@ export const SearchProvider = (props) => {
 
   const [results, setResults] = useState([]);
   const [filter, setFilter] = useState('');
+  const [searchbar, setSearchbar] = useState(false);
 
   let location = useLocation();
   let path = location.pathname;
@@ -31,7 +32,9 @@ export const SearchProvider = (props) => {
       results,
       filter,
       setFilter,
-      setResults
+      setResults,
+      searchbar,
+      setSearchbar
     }}>
       {props.children}
     </SearchContext.Provider>

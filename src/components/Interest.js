@@ -12,7 +12,7 @@ const Interest = (props) => {
   }
 
   return (
-    <tr classname='interestrow'>
+    <tr className='interestrow'>
       {/* <td>{date_added}</td> */}
       <td style={{width: '40%'}}>{card_name}</td>
       <td>{card_set}</td>

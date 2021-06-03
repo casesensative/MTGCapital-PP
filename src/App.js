@@ -8,7 +8,7 @@ import Interests from './components/Interests';
 import CardSearch from './components/CardSearch';
 import SearchBar from './components/SearchBar';
 import SiteHeader from './components/SiteHeader';
-import routes from './routes';
+import Routes from './routes';
 
 
 
@@ -23,7 +23,7 @@ function App(props) {
   return (
     <div className="App">
       <SiteHeader />
-      {routes}
+      <Routes />
       <Footer />
     </div>
   );

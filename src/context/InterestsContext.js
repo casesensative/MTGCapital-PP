@@ -17,13 +17,21 @@ export const InterestsProvider = (props) => {
     });
   }
 
+  const searchInterests = (user_id, searchtext) => {
+    axios.get(`/api/interests/${user_id}/${searchtext}`)
+    .then(results => {
+      setInterests(results.data);
+    }).catch(err => console.log(err))
+  }
+
   
 
   return (
     <InterestsContext.Provider value={{
       interests,
       setInterests,
-      getInterests
+      getInterests,
+      searchInterests
     }}>
     {props.children}
     </InterestsContext.Provider>

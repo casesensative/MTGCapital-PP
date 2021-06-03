@@ -6,19 +6,20 @@
 @import './searchbar';
 @import './searchresult';
 @import '../components/AddModal/addmodal';
+@import './interestsmobile';
 
 
 
 .interestspage {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   background-color: $primary-color;
 
 }
 
 .cardsearch {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   background-color: $primary-color;
   overflow: scroll;
 
@@ -137,7 +138,7 @@
 
 footer {
   width: 100vw;
-  height: 10vh;
+  height: 6.2vh;
   background-color: $dark-color;
 }
 

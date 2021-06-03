@@ -9,11 +9,14 @@ const Interests = (props) => {
 
   const {user, getUser} = useContext(UserContext);
 
+
+
+
+
   useEffect(() => {
     if (user) {
       getInterests(user.user_id);
-    } 
-    
+    }
   }, [user]);
 
 

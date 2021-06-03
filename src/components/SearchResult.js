@@ -24,7 +24,7 @@ const SearchResult = (props) => {
   return (
     <div className='searchresult' style={props.card_img_b && {marginBottom: '46px'}}>
       <div className="resultcontainer">
-        <table style={{border: 'none', tableLayout: 'fixed', width: '90%'}}>
+        <table style={{border: 'none', tableLayout: 'fixed', width: '70%'}}>
           <tbody>
             <tr>
               <td style={{width: '40px'}}>Name:</td>

@@ -25,7 +25,11 @@ export const UserProvider = (props) => {
     .then(user => {
       setUser(user.data);
       console.log(user.data);
-    }).catch(err => console.log(err));
+      history.push('/interests');
+    }).catch(err => {
+      history.push('/');
+      alert(err.response.data);
+    });
   }
 
   const getUser = async () => {

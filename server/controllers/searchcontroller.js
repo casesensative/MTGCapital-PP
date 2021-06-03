@@ -15,7 +15,7 @@ module.exports = {
 
     const searchresults = await db.cards.card_search(s1, s2, s3);
     
-    console.log(searchresults);
+    // console.log(searchresults);
 
     if (searchresults) {
       return res.status(200).send(searchresults)
