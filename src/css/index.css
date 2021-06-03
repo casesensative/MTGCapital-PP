@@ -171,6 +171,12 @@ table td {
   font-family: "KoHo", sans-serif;
 }
 
+.filterbar .filter p:first-child {
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  color: #e2e6f1;
+}
+
 .filterbar .filter p {
   margin-left: 10px;
   color: #e2e6f1;
@@ -410,12 +416,14 @@ table td {
   margin-top: 2px;
   width: 40px;
   text-align: center;
+  font-size: 16px;
 }
 
 .addmodal .modal .modal-content .addcard input[name=buyprice] {
   margin-top: 2px;
   width: 80px;
   text-align: center;
+  font-size: 16px;
 }
 
 .addmodal .modal .modal-content .react-add {
@@ -543,6 +551,11 @@ table td {
   width: 100vw;
   height: 70vh;
   background-color: #678EBB;
+}
+
+.interestrow a {
+  color: white;
+  text-decoration: none;
 }
 
 .cardsearch {

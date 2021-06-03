@@ -1,26 +1,75 @@
+import {Popover} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import {useState} from 'react';
 
+const useStyles = makeStyles((theme) => ({
+  popover: {
+    pointerEvents: 'none',
+  },
+  paper: {
+    padding: theme.spacing(1),
+  },
+}));
 
 const Interest = (props) => {
 
-  const {card_name, card_set, date_added, isfoil, amount, buyprice, price, foilprice} = props;
+  const {card_name, card_set, date_added, isfoil, amount, buyprice, price, foilprice, img_front, purchaseurl} = props;
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   let margin = 0;
   if (isfoil) {
-    margin = foilprice * amount - buyprice * amount;
+    margin = parseFloat(foilprice * amount - buyprice * amount).toFixed(2);
   } else {
-    margin = price * amount - buyprice * amount;
+    margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
   }
 
   return (
     <tr className='interestrow'>
       {/* <td>{date_added}</td> */}
-      <td style={{width: '40%'}}>{card_name}</td>
+      <td style={{width: '40%'}}>
+                <Popover
+        id="mouse-over-popover"
+        className={classes.popover}
+        classes={{
+          paper: classes.paper,
+        }}
+        open={open}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        onClose={handlePopoverClose}
+        disableRestoreFocus
+      >
+        <img style={{width: '300px'}} src={img_front} alt='card'/>
+      </Popover>
+          <a href={purchaseurl} aria-owns={open ? 'mouse-over-popover' : undefined}
+        aria-haspopup="true"
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose}>{card_name}</a>
+          </td>
       <td>{card_set}</td>
       <td>{isfoil ? 'FOIL' : null}</td>
       <td>{amount}</td>
       <td>{buyprice}</td>
       <td>{isfoil ? foilprice : price}</td>
-      <td style={margin < 0 ? {color: 'red'} : {color: 'white'}}>{margin}</td>
+      <td id='margin' style={margin < 0 ? {color: 'red'} : {color: 'white'}}>{margin}</td>
     </tr>
   )
 }

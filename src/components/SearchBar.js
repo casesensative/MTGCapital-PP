@@ -7,10 +7,10 @@ import {InterestsContext} from '../context/InterestsContext';
 
 const SearchBar = (props) => {
 
-  const {searchFunction, setFilter} = useContext(SearchContext);
+  const {searchFunction} = useContext(SearchContext);
   const {user, getUser} = useContext(UserContext);
   const [search, setSearch] = useState('');
-  const {setInterests, searchInterests} = useContext(InterestsContext);
+  const {setInterests, searchInterests, setFilter} = useContext(InterestsContext);
 
   useEffect(() => {
     getUser()
@@ -29,6 +29,7 @@ const SearchBar = (props) => {
         break;
       case '/interests':
         searchInterests(user_id, searchinput);
+        setFilter(searchinput);
         break;
     
       default:

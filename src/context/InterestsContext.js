@@ -7,6 +7,7 @@ export const InterestsContext = createContext();
 export const InterestsProvider = (props) => {
 
   const [interests, setInterests] = useState([]);
+  const [filter, setFilter] = useState('');
   const history = useHistory();
 
   const getInterests = (user_id) => {
@@ -31,7 +32,9 @@ export const InterestsProvider = (props) => {
       interests,
       setInterests,
       getInterests,
-      searchInterests
+      searchInterests,
+      filter,
+      setFilter
     }}>
     {props.children}
     </InterestsContext.Provider>
