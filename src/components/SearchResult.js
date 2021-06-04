@@ -11,8 +11,8 @@ const SearchResult = (props) => {
   const history = useHistory();
 
 
-  const addInterest = (card_id, buyprice, amount, isfoil) => {
-    axios.post('/api/interest', {card_id, buyprice, amount, isfoil}).then(res => {
+  const addInterest = (card_id, buypricefixed, amount, isfoil) => {
+    axios.post('/api/interest', {card_id, buypricefixed, amount, isfoil}).then(res => {
       setResponse(res.data);
     }).catch(err => {
       history.push('/');

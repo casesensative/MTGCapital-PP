@@ -19,7 +19,7 @@ const Interests = (props) => {
     if (user) {
       getInterests(user.user_id);
     }
-  }, [user]);
+  }, [user, interests]);
 
   const clearFilter = (e) => {
     e.preventDefault();
@@ -29,12 +29,10 @@ const Interests = (props) => {
 
 
   const mappedInterests = interests.map(interest => {
-    console.log(interest);
     let date = interest.date_added.substring(0, 10);
-
-    console.log(date);
-
+    if (interest.amount > 0) {
     return <Interest key={interest.interest_id} 
+              interest_id={interest.interest_id}
               card_name={interest.card_name} 
               card_set={interest.card_set} 
               date_added={date} 
@@ -44,7 +42,9 @@ const Interests = (props) => {
               price={interest.price} 
               foilprice={interest.foilprice} 
               img_front={interest.imgurl_f} 
-              purchaseurl={interest.purchaseurl} />
+              purchaseurl={interest.purchaseurl} 
+              interest_id={interest.interest_id} />
+    }
   });
 
  
@@ -96,6 +96,7 @@ const Interests = (props) => {
             <th>BUY</th>
             <th>MKT</th>
             <th>MRGN</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id='interestsbody'>

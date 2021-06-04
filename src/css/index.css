@@ -109,7 +109,7 @@ table td {
 }
 
 .intereststable {
-  width: 90%;
+  width: 96%;
   table-layout: fixed;
   overflow: hidden;
   font-family: "KoHo", sans-serif;
@@ -172,8 +172,10 @@ table td {
 }
 
 .filterbar .filter p:first-child {
+  position: relative;
+  top: 2px;
   font-family: "Chivo", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   color: #e2e6f1;
 }
 
@@ -465,6 +467,7 @@ table td {
 }
 
 .close-container {
+  background-color: seagreen;
   position: relative;
   margin: 6px 4px;
   width: 22px;
@@ -539,6 +542,21 @@ table td {
   display: inline;
   width: 20px;
   height: 20px;
+}
+
+.sellinput {
+  margin-top: 10px;
+}
+
+.sellinterest {
+  margin-top: 26px;
+  width: 50px;
+}
+
+.delete-interest {
+  all: unset;
+  width: 100px;
+  height: 26px;
 }
 
 .interestsmobile {

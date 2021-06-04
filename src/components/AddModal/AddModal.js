@@ -24,7 +24,8 @@ const AddModal = (props) => {
   const addInterest = (card_id, buyprice, amount, isfoil) => {
     console.log(isfoil);
     if (card_id && buyprice && amount) {
-      addInterestFn(card_id, buyprice, amount, isfoil);
+      const buypricefixed = parseFloat(buyprice).toFixed(2);
+      addInterestFn(card_id, buypricefixed, amount, isfoil);
       setAmount('');
       setBuyprice('');
       setModalShow(false);

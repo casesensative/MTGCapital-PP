@@ -105,6 +105,7 @@
 }
 
 .close-container{
+  background-color: seagreen;
   position: relative;
   margin: 6px 4px;
   width: 22px;
@@ -167,6 +168,21 @@
     height: 20px;
   }
   
+}
+
+.sellinput {
+  margin-top: 10px;
+}
+
+.sellinterest {
+  margin-top: 26px;
+  width: 50px;
+}
+
+.delete-interest {
+  all: unset;
+  width: 100px;
+  height: 26px;
 }
 
 

@@ -1,6 +1,8 @@
 import {Popover} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {useState} from 'react';
+import {AiOutlineMinusSquare, AiFillMinusSquare} from 'react-icons/ai';
+import SellModal from './SellModal/SellModal';
 
 const useStyles = makeStyles((theme) => ({
   popover: {
@@ -13,9 +15,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Interest = (props) => {
 
-  const {card_name, card_set, date_added, isfoil, amount, buyprice, price, foilprice, img_front, purchaseurl} = props;
+  const {card_name, card_set, date_added, isfoil, amount, buyprice, price, foilprice, img_front, purchaseurl, interest_id} = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [sellbutton, setSellButton] = useState(false);
+  const [modalshow, setModalShow] = useState(false);
+
+
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -33,6 +39,7 @@ const Interest = (props) => {
   } else {
     margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
   }
+
 
   return (
     <tr className='interestrow'>
@@ -70,6 +77,15 @@ const Interest = (props) => {
       <td>{buyprice}</td>
       <td>{isfoil ? foilprice : price}</td>
       <td id='margin' style={margin < 0 ? {color: 'red'} : {color: 'white'}}>{margin}</td>
+      <td><div className="sellbutton" 
+      onMouseEnter={() => setSellButton(true)} 
+      onMouseLeave={() => setSellButton(false)} 
+      onClick={() => setModalShow(true)} >
+      {!sellbutton ? <AiOutlineMinusSquare size={12} /> : 
+      <AiFillMinusSquare size={12} />}</div></td>
+      <SellModal modalshow={modalshow} setModalShow={setModalShow} 
+      card_name={card_name} card_set={card_set} amount={amount} buyprice={buyprice} 
+      isfoil={isfoil} interest_id={interest_id}/>
     </tr>
   )
 }

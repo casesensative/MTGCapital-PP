@@ -33,8 +33,10 @@
     font-family: $font-copy;
 
     p:first-child {
+      position: relative;
+      top: 2px;
       font-family: $font-sub;
-      font-weight: 300;
+      font-weight: 200;
       color: $white; 
 
     }
@@ -55,10 +57,5 @@
   }
 }
 
-.filter + p {
- 
-}
 
-.interestspage .filterbar .filter + p {
 
-}

@@ -2,14 +2,14 @@ module.exports = {
   add_interest: async (req, res, next) => {
     const db = req.app.get('db');
     const {user} = req.session;
-    const {card_id, buyprice, amount, isfoil} = req.body;
+    const {card_id, buypricefixed, amount, isfoil} = req.body;
 
     if (!user) {
       return res.status(511).send('User not logged in.');
     }
     const user_id = user.user_id;
     console.log('adding card to interests')
-    const added = await db.interests.add_interest(user_id, card_id, buyprice, amount, isfoil);
+    const added = await db.interests.add_interest(user_id, card_id, buypricefixed, amount, isfoil);
 
     if (added) {
       return res.status(200).send('Card added to interests.');
@@ -52,5 +52,21 @@ module.exports = {
     } else {
       return res.status(500).send('Interests search failed. Try again later.')
     }
+  },
+
+  sell_interest: async (req, res) => {
+
+    console.log('hitting sell endpoint!');
+    const db = req.app.get('db');
+    const {interest_id, sellamount, sellprice, margin} = req.body;
+
+    const addedMargin = await db.interests.sell_interest(interest_id, sellamount, sellprice, margin);
+
+    if (addedMargin) {
+      return res.status(200).send('Interest sold. Margin added.');
+    } else {
+      return res.status(500).send('Error selling interest. Try again later.');
+    }
+
   }
 }

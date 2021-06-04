@@ -12,7 +12,16 @@ create table interests (
     buyprice decimal,
     amount int,
     isfoil boolean,
-    date_added timestamp  
+    date_added timestamp 
+);
+
+create table margins (
+    margin_id serial primary key,
+    interest_id int references interests(interest_id),
+    sold_amount int,
+    sold_price decimal,
+    sold_date timestamp,
+    margin decimal
 );
 
 
