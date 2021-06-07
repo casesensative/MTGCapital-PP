@@ -1,8 +1,9 @@
 import {Popover} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {useState} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import {AiOutlineMinusSquare, AiFillMinusSquare} from 'react-icons/ai';
 import SellModal from './SellModal/SellModal';
+import {InterestsContext} from '../context/InterestsContext';
 
 const useStyles = makeStyles((theme) => ({
   popover: {
@@ -20,8 +21,33 @@ const Interest = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [sellbutton, setSellButton] = useState(false);
   const [modalshow, setModalShow] = useState(false);
+  const [margin, setMargin] = useState('');
 
+  const {marginTotal, setMarginTotal} = useContext(InterestsContext);
 
+  // const setMargins = () => {
+  //   if (isfoil) {
+  //     const margin = parseFloat(foilprice * amount - buyprice * amount).toFixed(2);
+  //     setMargin(margin);
+  //     setMarginTotal((marginTotal) => marginTotal + margin);
+  //   } else {
+  //     const margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
+  //     setMargin(margin);
+  //     setMarginTotal((marginTotal) => marginTotal + margin);
+  //   }
+  // }
+
+  useEffect(() => {
+    if (isfoil) {
+      const margin = parseFloat(foilprice * amount - buyprice * amount).toFixed(2);
+      setMargin(margin);
+      setMarginTotal((marginTotal) => marginTotal + +margin);
+    } else {
+      const margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
+      setMargin(margin);
+      setMarginTotal((marginTotal) => marginTotal + +margin);
+    };
+  }, []);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -33,12 +59,9 @@ const Interest = (props) => {
 
   const open = Boolean(anchorEl);
 
-  let margin = 0;
-  if (isfoil) {
-    margin = parseFloat(foilprice * amount - buyprice * amount).toFixed(2);
-  } else {
-    margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
-  }
+ 
+
+
 
 
   return (

@@ -14,21 +14,23 @@ const SearchBar = (props) => {
 
   useEffect(() => {
     getUser()
-  });
+  }, []);
 
 
 
   // props.location.pathname
 
-  const doSearch = (user_id, searchinput) => {
+  const doSearch = (e, user_id, searchinput) => {
     // let searchtext = searchinput.split(' ');
     // setFilter(searchinput);
+    e.preventDefault();
     switch (props.location.pathname) {
       case '/search':
         searchFunction(searchinput);
         break;
       case '/interests':
         console.log('searching interests');
+        console.log(user_id, searchinput);
         searchInterests(user_id, searchinput);
         setFilter(searchinput);
         break;
@@ -43,7 +45,7 @@ const SearchBar = (props) => {
 
   return (
     <div className="searchbar">
-      <form onSubmit={() => doSearch(user.user_id, search)}>
+      <form onSubmit={(e) => doSearch(e, user.user_id, search)}>
         <input type="text" name="searchbar" value={search}
         onChange={(e) => setSearch(e.target.value)} autoFocus />
         <button>SEARCH</button>

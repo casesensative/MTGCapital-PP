@@ -7,6 +7,7 @@ export const InterestsContext = createContext();
 export const InterestsProvider = (props) => {
 
   const [interests, setInterests] = useState([]);
+  const [marginTotal, setMarginTotal] = useState(0);
   const [filter, setFilter] = useState('');
   const history = useHistory();
 
@@ -16,15 +17,21 @@ export const InterestsProvider = (props) => {
     }).catch(err => {
       history.push('/');
     });
-  }, [setInterests, history]);
+  }, []);
 
   const searchInterests = (user_id, searchtext) => {
+    
+    console.log('search interests axios call');
     axios.get(`/api/interests/${user_id}/${searchtext}`)
     .then(results => {
+      setMarginTotal(0);
+      console.log(results.data);
+      //put margin logic here
       setInterests(results.data);
     }).catch(err => console.log(err))
   }
 
+  console.log({marginTotal});
   
 
   return (
@@ -34,7 +41,9 @@ export const InterestsProvider = (props) => {
       getInterests,
       searchInterests,
       filter,
-      setFilter
+      setFilter,
+      marginTotal,
+      setMarginTotal
     }}>
     {props.children}
     </InterestsContext.Provider>

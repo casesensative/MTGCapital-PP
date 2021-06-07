@@ -5,11 +5,11 @@ import Interest from './Interest';
 
 const Interests = (props) => {
 
-  const {interests, setInterests, getInterests, filter, setFilter} = useContext(InterestsContext);
+  const {interests, setInterests, getInterests, filter, setFilter, marginTotal, setMarginTotal} = useContext(InterestsContext);
 
   const {user, getUser} = useContext(UserContext);
 
-  const [marginTotal, setMarginTotal] = useState(0);
+  // const [marginTotal, setMarginTotal] = useState(0);
 
 
 
@@ -19,7 +19,7 @@ const Interests = (props) => {
     if (user) {
       getInterests(user.user_id);
     }
-  }, [user, getInterests, interests]);
+  }, [user]);
 
   const clearFilter = (e) => {
     e.preventDefault();
@@ -49,22 +49,22 @@ const Interests = (props) => {
 
  
 
-  const marginAdd = () => {
-    const table = document.getElementById('interestsbody');
-    // console.log(table);
-    let sum = 0;
+  // const marginAdd = () => {
+  //   const table = document.getElementById('interestsbody');
+  //   // console.log(table);
+  //   let sum = 0;
 
-    for (let i = 0; i < table.rows.length; i++) {
-      // console.log(table.rows[i].cells[6].innerText);
-      sum = sum + +table.rows[i].cells[6].innerText;
-    }
-    return sum.toFixed(2);
+  //   for (let i = 0; i < table.rows.length; i++) {
+  //     // console.log(table.rows[i].cells[6].innerText);
+  //     sum = sum + +table.rows[i].cells[6].innerText;
+  //   }
+  //   return sum.toFixed(2);
 
-  }
+  // }
 
-  useEffect(() => {
-    setMarginTotal(marginAdd());
-  }, [interests]);
+  // useEffect(() => {
+  //   setMarginTotal(marginAdd());
+  // }, [interests]);
 
 
   
@@ -103,7 +103,7 @@ const Interests = (props) => {
             <td></td>
             <td></td>
             <td></td>
-            <td>{marginTotal}</td>
+            <td>{parseFloat(marginTotal).toFixed(2)}</td>
           </tr> 
         </tfoot>
 

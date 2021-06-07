@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {useContext} from 'react';
+import {useEffect, useState, useContext} from 'react';
+import {useLocation} from 'react-router-dom';
 import {UserContext} from '../context/UserContext';
 import {SearchContext} from '../context/SearchContext';
 
@@ -10,6 +10,11 @@ const Login = (props) => {
 
   const {registerUser, loginUser} = useContext(UserContext);
   const {setSearchbar} = useContext(SearchContext);
+  let location = useLocation();
+
+  useEffect(() => {
+    setSearchbar(false);
+  }, [setSearchbar]);
  
 
   const register = (e, email, password) => {
@@ -28,15 +33,17 @@ const Login = (props) => {
     e.preventDefault();
     if (email && password) {
       await loginUser(email, password);
-      setEmail('');
-      setPassword('');
-      setPhone('');
     } else {
       return alert('You must enter an email address and password.');
     }
+    if (location.pathname='/') {
+      setEmail('');
+      setPassword('');
+      setPhone('');
+    }
   }
 
-  setSearchbar(false);
+
 
   return (
     <section className="loginpage">
