@@ -16,7 +16,7 @@ const SearchBar = (props) => {
     getUser()
   });
 
-  console.log(props);
+
 
   // props.location.pathname
 
@@ -28,6 +28,7 @@ const SearchBar = (props) => {
         searchFunction(searchinput);
         break;
       case '/interests':
+        console.log('searching interests');
         searchInterests(user_id, searchinput);
         setFilter(searchinput);
         break;

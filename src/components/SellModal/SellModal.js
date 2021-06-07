@@ -12,8 +12,8 @@ const SellModal = (props) => {
     setModalShow,
     interest_id,
   } = props;
-  const [sellamount, setSellAmount] = useState(null);
-  const [sellprice, setSellPrice] = useState(null);
+  const [sellamount, setSellAmount] = useState('');
+  const [sellprice, setSellPrice] = useState('');
   const [selltoggle, setSellToggle] = useState(false);
 
   let modaltoggle = !modalshow ? "modal-closed" : "addmodal";

@@ -19,7 +19,7 @@ const Interests = (props) => {
     if (user) {
       getInterests(user.user_id);
     }
-  }, [user, getInterests]);
+  }, [user, getInterests, interests]);
 
   const clearFilter = (e) => {
     e.preventDefault();
@@ -58,25 +58,15 @@ const Interests = (props) => {
       // console.log(table.rows[i].cells[6].innerText);
       sum = sum + +table.rows[i].cells[6].innerText;
     }
-    console.log(sum);
-    console.log(typeof(sum));
     return sum.toFixed(2);
 
   }
 
   useEffect(() => {
     setMarginTotal(marginAdd());
-  }, []);
-
-  console.log('Hello');
+  }, [interests]);
 
 
-
-  // const table = document.getElementById('intereststable'), sumVal = 0;
-
-  // for (let i = 0; i < table.rows.length; i++) {
-  //   sumVal = sumVal + table.rows[i].cells[6].innerHtml;
-  // }
   
   return (
     <section className="interestspage">
