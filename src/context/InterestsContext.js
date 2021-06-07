@@ -1,4 +1,4 @@
-import {createContext, useState} from 'react';
+import {createContext, useState, useCallback} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 
@@ -10,13 +10,13 @@ export const InterestsProvider = (props) => {
   const [filter, setFilter] = useState('');
   const history = useHistory();
 
-  const getInterests = (user_id) => {
+  const getInterests = useCallback ((user_id) => {
     axios.get(`/api/interests/${user_id}`).then(res => {
       setInterests(res.data);
     }).catch(err => {
       history.push('/');
     });
-  }
+  }, [setInterests, history]);
 
   const searchInterests = (user_id, searchtext) => {
     axios.get(`/api/interests/${user_id}/${searchtext}`)

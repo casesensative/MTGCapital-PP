@@ -14,7 +14,7 @@ const SearchBar = (props) => {
 
   useEffect(() => {
     getUser()
-  }, []);
+  });
 
   console.log(props);
 

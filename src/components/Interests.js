@@ -19,7 +19,7 @@ const Interests = (props) => {
     if (user) {
       getInterests(user.user_id);
     }
-  }, [user, interests]);
+  }, [user, getInterests]);
 
   const clearFilter = (e) => {
     e.preventDefault();
@@ -66,7 +66,11 @@ const Interests = (props) => {
 
   useEffect(() => {
     setMarginTotal(marginAdd());
-  }, [interests])
+  }, []);
+
+  console.log('Hello');
+
+
 
   // const table = document.getElementById('intereststable'), sumVal = 0;
 
@@ -88,7 +92,6 @@ const Interests = (props) => {
       <table className='intereststable' id='intereststable'>
         <thead>
           <tr style={{marginRight: '12px'}}>
-            {/* <th>DATE</th> */}
             <th style={{width: '30%'}}>CARD</th>
             <th>SET</th>
             <th>F</th>
