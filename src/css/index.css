@@ -370,7 +370,7 @@ table td {
   border-radius: 4px;
   width: 300px;
   max-width: 100%;
-  height: 280px;
+  height: 300px;
   max-height: 100%;
   z-index: 100;
   background: #85A5CB;
@@ -423,6 +423,13 @@ table td {
 }
 
 .addmodal .modal .modal-content .addcard input[name="buyprice"] {
+  margin-top: 2px;
+  width: 80px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.addmodal .modal .modal-content .addcard input[name="sellprice"] {
   margin-top: 2px;
   width: 80px;
   text-align: center;
@@ -546,15 +553,27 @@ table td {
 }
 
 .sellinput {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .sellinterest {
   all: unset;
-  font-size: 0.8rem;
+  width: 60px;
+  height: 30px;
+  color: #e2e6f1;
+  font-family: "Chivo", sans-serif;
   font-weight: 300;
-  margin-top: 26px;
-  width: 50px;
+  font-size: 0.8rem;
+  border-radius: 2px;
+  border: 1px solid #85A5CB;
+  background-color: #3D546E;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.sellinterest:hover {
+  color: white;
+  text-shadow: 1px 1px 0px #85A5CB;
 }
 
 .delete-interest {
@@ -611,6 +630,25 @@ table td {
   height: 100%;
   font-size: 2rem;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sell-form p {
+  font-family: "Chivo", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .interestsmobile {

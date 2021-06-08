@@ -12,27 +12,50 @@ export const InterestsProvider = (props) => {
   const history = useHistory();
 
   const getInterests = useCallback ((user_id) => {
-    axios.get(`/api/interests/${user_id}`).then(res => {
-      setInterests(res.data);
+    axios.get(`/api/interests/${user_id}`).then(results => {
+      //put margin logic here
+      setMarginTotal(parseFloat(results.data.map(interest => {
+        if (interest.isfoil) {
+          return +parseFloat(interest.foilprice * interest.amount - 
+            interest.buyprice * interest.amount).toFixed(2);
+
+        } else {
+          return +parseFloat(interest.price * interest.amount 
+            - interest.buyprice * interest.amount).toFixed(2);
+        };
+      }).reduce((a, c) => {
+        return a + c;
+      }, 0)).toFixed(2));
+      //end logic
+      setInterests(results.data);
     }).catch(err => {
       history.push('/');
     });
   }, []);
 
   const searchInterests = (user_id, searchtext) => {
-    
-    console.log('search interests axios call');
     axios.get(`/api/interests/${user_id}/${searchtext}`)
     .then(results => {
-      setMarginTotal(0);
-      console.log(results.data);
       //put margin logic here
+      setMarginTotal(parseFloat(results.data.map(interest => {
+        if (interest.isfoil) {
+          return +parseFloat(interest.foilprice * interest.amount - 
+            interest.buyprice * interest.amount).toFixed(2);
+
+        } else {
+          return +parseFloat(interest.price * interest.amount 
+            - interest.buyprice * interest.amount).toFixed(2);
+        };
+      }).reduce((a, c) => {
+        return a + c;
+      }, 0)).toFixed(2));
+      //end logic
       setInterests(results.data);
     }).catch(err => console.log(err))
   }
 
-  console.log({marginTotal});
-  
+
+
 
   return (
     <InterestsContext.Provider value={{

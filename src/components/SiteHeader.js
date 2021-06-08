@@ -73,7 +73,7 @@ const SiteHeader = (props) => {
           <Link to='/search'>
             <li onClick={() => setMenu(false)}>Card Search</li>
           </Link>
-          <Link>
+          <Link to='/margins'>
             <li onClick={() => setMenu(false)}>Margins</li>
           </Link>
         </ul>

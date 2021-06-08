@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Interests from './components/Interests';
 // import InterestsMobile from './components/InterestsMobile';
 import CardSearch from './components/CardSearch';
+import Margins from './components/Margins';
 // import {useEffect, useState} from 'react';
 
 
@@ -25,6 +26,7 @@ export default function Routes()  {
       {/* {isDesktop ? <Route path='/interests' component={Interests} /> : <Route path='/interests' component={InterestsMobile} />} */}
       <Route path='/interests' component={Interests} />
       <Route path='/search' component={CardSearch} />
+      <Route path='/margins' component={Margins} />
     </Switch>
   )
 }

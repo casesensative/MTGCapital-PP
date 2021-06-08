@@ -35,7 +35,7 @@ const Interests = (props) => {
               interest_id={interest.interest_id}
               card_name={interest.card_name} 
               card_set={interest.card_set} 
-              date_added={date} 
+              date_added={interest.date_added} 
               isfoil={interest.isfoil} 
               amount={interest.amount} 
               buyprice={interest.buyprice} 
@@ -103,7 +103,7 @@ const Interests = (props) => {
             <td></td>
             <td></td>
             <td></td>
-            <td>{parseFloat(marginTotal).toFixed(2)}</td>
+            <td>{marginTotal}</td>
           </tr> 
         </tfoot>
 

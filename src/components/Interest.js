@@ -1,9 +1,9 @@
 import {Popover} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {useState, useContext, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {AiOutlineMinusSquare, AiFillMinusSquare} from 'react-icons/ai';
 import SellModal from './SellModal/SellModal';
-import {InterestsContext} from '../context/InterestsContext';
+
 
 const useStyles = makeStyles((theme) => ({
   popover: {
@@ -23,7 +23,7 @@ const Interest = (props) => {
   const [modalshow, setModalShow] = useState(false);
   const [margin, setMargin] = useState('');
 
-  const {marginTotal, setMarginTotal} = useContext(InterestsContext);
+
 
   // const setMargins = () => {
   //   if (isfoil) {
@@ -41,11 +41,11 @@ const Interest = (props) => {
     if (isfoil) {
       const margin = parseFloat(foilprice * amount - buyprice * amount).toFixed(2);
       setMargin(margin);
-      setMarginTotal((marginTotal) => marginTotal + +margin);
+      // setMarginTotal((marginTotal) => marginTotal + +margin);
     } else {
       const margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
       setMargin(margin);
-      setMarginTotal((marginTotal) => marginTotal + +margin);
+      // setMarginTotal((marginTotal) => marginTotal + +margin);
     };
   }, []);
 
@@ -89,7 +89,7 @@ const Interest = (props) => {
       >
         <img style={{width: '300px'}} src={img_front} alt='card'/>
       </Popover>
-          <a href={purchaseurl} aria-owns={open ? 'mouse-over-popover' : undefined}
+          <a href={purchaseurl} target='_blank' aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}>{card_name}</a>
@@ -108,7 +108,7 @@ const Interest = (props) => {
       <AiFillMinusSquare size={12} />}</div></td>
       <SellModal modalshow={modalshow} setModalShow={setModalShow} 
       card_name={card_name} card_set={card_set} amount={amount} buyprice={buyprice} 
-      isfoil={isfoil} interest_id={interest_id}/>
+      isfoil={isfoil} interest_id={interest_id} margin={margin}/>
     </tr>
   )
 }

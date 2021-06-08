@@ -6,6 +6,7 @@ const authControl = require('./controllers/authcontroller');
 const searchControl = require('./controllers/searchcontroller');
 const auth = require('./middleware/authCheck');
 const interestControl = require('./controllers/interestcontroller');
+const marginsControl = require('./controllers/marginscontroller');
 
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
@@ -52,3 +53,7 @@ app.post('/api/interest', auth.authCheck, interestControl.add_interest);
 app.get('/api/interests/:user_id', auth.authCheck, interestControl.get_interests);
 app.get('/api/interests/:user_id/:searchtext', auth.authCheck, interestControl.search_interests);
 app.post('/api/interests/sell', auth.authCheck, interestControl.sell_interest);
+
+//MARGINS ENDPOINTS
+
+app.get('/api/margins/:user_id', auth.authCheck, marginsControl.get_margins);

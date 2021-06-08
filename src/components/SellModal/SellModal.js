@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import {InterestsContext} from '../../context/InterestsContext';
+import {UserContext} from '../../context/UserContext';
+
 
 const SellModal = (props) => {
+  const {getInterests} = useContext(InterestsContext);
+  const {user} = useContext(UserContext);
   const {
     card_name,
     card_set,
@@ -11,6 +16,7 @@ const SellModal = (props) => {
     modalshow,
     setModalShow,
     interest_id,
+    margin
   } = props;
   const [sellamount, setSellAmount] = useState('');
   const [sellprice, setSellPrice] = useState('');
@@ -22,8 +28,6 @@ const SellModal = (props) => {
     e.preventDefault();
     if (sellamount && amount) {
       if (sellamount <= amount) {
-        const mathMargin = sellprice * sellamount - buyprice * amount;
-        const margin = mathMargin.toFixed(2);
         if (interest_id && sellamount && sellprice && margin) {
           axios
             .post("/api/interests/sell", {
@@ -33,6 +37,7 @@ const SellModal = (props) => {
               margin,
             })
             .then((res) => {
+              getInterests(user.user_id);
               console.log(res);
             })
             .catch((err) => console.log(err));
@@ -43,7 +48,9 @@ const SellModal = (props) => {
       }
     } else {
       alert("Please input a selling amount and price.");
-    }
+    };
+    setSellAmount('');
+    setSellPrice('');
   };
 
   return (
@@ -56,13 +63,13 @@ const SellModal = (props) => {
             <div className="rightleft"></div>
           </div>
         </div>
-        <div className="modal-content" style={{ height: "70%" }}>
+        <div className="modal-content" style={{ height: "75%" }}>
           <div className="cardinfo">
             <h1>{card_name}</h1>
             <h2>{card_set}</h2>
             <p>{isfoil ? "Foil" : null}</p>
           </div>
-          {/* <form action="submit" className="sell-form"> */}
+          <form action="submit" className="sell-form">
             <div className="addcard" style={{ height: "40%" }}>
               <p>Amount: </p>
               <input
@@ -82,7 +89,7 @@ const SellModal = (props) => {
                 onChange={(e) => setSellPrice(e.target.value)}
               />
             </div>
-            <div
+            <button
               type='submit'
               className="sellinterest"
               onMouseEnter={() => setSellToggle(true)}
@@ -92,8 +99,8 @@ const SellModal = (props) => {
               }>
               {/* {!selltoggle ? <RiAddBoxLine size={32} /> : <RiAddBoxFill size={32}/> } */}
               <p>SELL</p>
-            </div>
-          {/* </form> */}
+            </button>
+          </form>
         </div>
       </div>
     </div>
