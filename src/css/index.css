@@ -40,7 +40,7 @@
 
 .loginpage {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   background-color: #678EBB;
 }
 
@@ -661,6 +661,13 @@ table td {
   width: 100vw;
   height: 70vh;
   background-color: #678EBB;
+}
+
+.marginspage {
+  width: 100vw;
+  height: 70vh;
+  background-color: #678EBB;
+  overflow: scroll;
 }
 
 .interestrow a {

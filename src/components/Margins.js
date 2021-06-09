@@ -1,28 +1,22 @@
-import {useEffect, useState, useContext} from 'react';
-import axios from 'axios';
+import {useEffect, useContext, useState} from 'react';
 import {UserContext} from '../context/UserContext';
+import {MarginsContext} from '../context/MarginsContext';
 import Margin from '../components/Margin';
+import LineChart from './LineChart';
 
 
 const Margins = () => {
   
   const {user} = useContext(UserContext);
-  const [sellHistory, setSellHistory] = useState([]);
-  const [marginsTotal, setMarginsTotal] = useState(0);
+  const {sellHistory, marginsTotal, getMargins, years, setYear} = useContext(MarginsContext);
+  const [selectedyear, setSelectedyear] = useState(null);
 
   useEffect(() => {
     if (user) {
-      axios.get(`/api/margins/${user.user_id}`).then(results => {
-        setSellHistory(results.data);
-        setMarginsTotal(results.data.map(margin => {
-          return +margin.margin
-        }).reduce((a, c) => {
-          return a + c;
-        }));
-        console.log(results.data)
-      }).catch(err => console.log(err))
+      getMargins(selectedyear);
     }
-  }, [])
+  }, [user, selectedyear])
+
 
   const mappedMargins = sellHistory.map(margin => {
     let dateArr = margin.sold_date.substring(0, 10).split("-");
@@ -38,12 +32,25 @@ const Margins = () => {
                     margin={margin.margin} />
   })
 
+  const yearDropDown = years.map(y => {
+    return (
+      <option key={y} value={y}>{y}</option>
+    )
+  })
+
+
   
   return (
-    <section className="interestspage">
+    <section className="marginspage">
       <div className="pageheading">
         <h3>MARGINS</h3>
       </div>
+      <div className='yeardropdown'>
+        <select onChange={(e) => setSelectedyear(e.target.value)}>
+          {yearDropDown}
+        </select>
+      </div>
+      <LineChart />
       {/* <div className="filterbar">
         <div className="filter">
           <p>FILTER: </p><p>{filter}</p>

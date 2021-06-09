@@ -17,6 +17,13 @@
 
 }
 
+.marginspage {
+  width: 100vw;
+  height: 70vh;
+  background-color: $primary-color;
+  overflow: scroll;
+}
+
 .interestrow a {
   color: white;
   text-decoration: none;

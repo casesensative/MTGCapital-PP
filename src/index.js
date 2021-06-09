@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {UserProvider} from './context/UserContext';
 import {SearchProvider} from './context/SearchContext';
 import {InterestsProvider} from './context/InterestsContext';
+import {MarginsProvider} from './context/MarginsContext';
 import {HashRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
@@ -14,7 +15,9 @@ ReactDOM.render(
       <SearchProvider>
         <UserProvider>
           <InterestsProvider>
-            <App />
+            <MarginsProvider>
+              <App />
+            </MarginsProvider>
           </InterestsProvider>
         </UserProvider>
       </SearchProvider>
