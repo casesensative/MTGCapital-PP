@@ -37,7 +37,10 @@ const SiteHeader = (props) => {
 
 
 
-
+const logout = () => {
+  setMenu(false);
+  axios.delete('/auth/logout').then(res => null).catch(err => console.log(err));
+}
 
 
  const openMenu = () => {
@@ -75,6 +78,9 @@ const SiteHeader = (props) => {
           </Link>
           <Link to='/margins'>
             <li onClick={() => setMenu(false)}>Margins</li>
+          </Link>
+          <Link to='/'>
+            <li onClick={()=> logout()}>Logout</li>
           </Link>
         </ul>
       </div>
