@@ -40,8 +40,51 @@
       background-color: $darkest-color;
       color: white;
     }
+  }
+}
 
+.desktopmarginsearch {
+  margin-top: 10px;
+  width: 80%;
+  height: 10vh;
+  
+  
+}
+
+.desktopsearchbar {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  input {
+    width: 75%;
+    height: 2rem;
+    background-color: $light-color;
+    width: 300px;
+    border: none;
+    font-family: $font-sub;
+    font-weight: 300;
+    font-size: 1rem;
+    padding-left: 8px;
   }
 
+  button {
+    all: unset;
+    width: 80px;
+    text-align: center;
+    font-family: $font-sub;
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: $light-color;
+    color: white;
+    cursor: pointer;
+    @include transition-ease;
 
+    &:hover {
+      background-color: $darkest-color;
+      // color: $darkest-color;
+
+    }
+  }
 }
+

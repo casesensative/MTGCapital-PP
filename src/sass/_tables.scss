@@ -19,17 +19,20 @@ table {
   }
 }
 
+.tableWrapper {
+  overflow: auto;
+}
 
 .intereststable {
   width: 96%;
   table-layout: fixed;
-  overflow: hidden;
   font-family: $font-copy;
   font-size: .7rem;
-  border: none;
+  border: none; 
+  text-align: center;
 
   thead {
-    text-align: left;
+    text-align: center;
   }
 }
 

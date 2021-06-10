@@ -4,6 +4,7 @@
   background-color: $light-color;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   h3 {
     font-family: $font-barcode;
@@ -16,7 +17,7 @@
   width: 80vw;
   height: 4vh;
   background-color: $light-color;
-  margin: auto;
+  // margin: auto;
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
@@ -37,24 +38,39 @@
       top: 2px;
       font-family: $font-sub;
       font-weight: 200;
-      color: $white; 
+      color: $white;
+      margin-left: 10px;
+      font-style: italic; 
 
     }
     
-    p {
-      margin-left: 10px;
-      color: $white;
-      font-style: italic;
-      margin-bottom: 2px;
-    }
+    // p {
+    //   margin-left: 10px;
+    //   color: $white;
+    //   font-style: italic;
+    //   margin-bottom: 2px;
+    // }
   }
   button {
     all: unset;
     margin-right: 3%;
     font-family: $font-sub;
     font-weight: 300;
-    color: $white;
+    font-size: 1rem;
+    color: white;
   }
+}
+
+@media (min-width: 768px) {
+  .filterbar {
+    height: 2rem;
+    width: 12vw;
+
+    .filter {
+      height: 2rem;
+    }
+  }
+  
 }
 
 

@@ -10,14 +10,15 @@ export const MarginsProvider = (props) => {
 
   const [marginsTotal, setMarginsTotal] = useState(0);
   const [sellHistory, setSellHistory] = useState([]);
+  const [searched, setSearched] = useState(false);
   const [data, setData] = useState({});
   const [dataMargins, setDataMargins] = useState({Jan: 0, Feb: 0, Mar: 0, Apr: 0, May: 0,
     Jun: 0, Jul: 0, Aug: 0, Sep: 0, Oct: 0, Nov: 0, Dec: 0})
   const [year, setYear] = useState('');
   const [years, setYears] = useState([]);
 
+
   const getMargins = (ddyear) => {
-    console.log('hello');
     if (user) {
       axios.get(`/api/margins/${user.user_id}`).then(results => {
         setSellHistory(results.data);
@@ -127,12 +128,27 @@ export const MarginsProvider = (props) => {
             }
           ]
         });
-
-        
       }).catch(err => console.log(err))
     }
   }
-  
+
+ 
+
+  const searchMargins = (searchinput) => {
+    if (user) {
+      axios.get(`/api/margins/${user.user_id}/${searchinput}`).then (results => {
+        console.log(results.data);
+        setSearched(true);
+        setSellHistory(results.data);
+        setMarginsTotal(results.data.map(margin => {
+          return +margin.margin
+        }).reduce((a, c) => {
+          return a + c;
+        }));
+      }).catch(err => console.log(err));
+    }
+  }
+ 
   return (
     <MarginsContext.Provider value={{
       marginsTotal,
@@ -144,7 +160,10 @@ export const MarginsProvider = (props) => {
       dataMargins,
       year,
       years,
-      setYear
+      setYear,
+      searchMargins,
+      setSearched,
+      searched
 
 
     }}>

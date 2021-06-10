@@ -57,3 +57,4 @@ app.post('/api/interests/sell', auth.authCheck, interestControl.sell_interest);
 //MARGINS ENDPOINTS
 
 app.get('/api/margins/:user_id', auth.authCheck, marginsControl.get_margins);
+app.get('/api/margins/:user_id/:searchtext', auth.authCheck, marginsControl.search_margins);

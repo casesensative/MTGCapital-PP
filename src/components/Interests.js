@@ -2,10 +2,13 @@ import {useContext, useEffect, useState} from 'react';
 import {InterestsContext} from '../context/InterestsContext';
 import { UserContext } from '../context/UserContext';
 import Interest from './Interest';
+import {useMediaQuery} from 'react-responsive';
 
 const Interests = (props) => {
 
-  const {interests, setInterests, getInterests, filter, setFilter, marginTotal, setMarginTotal} = useContext(InterestsContext);
+  const {interests, setInterests, getInterests, filter, setFilter, marginTotal, setMarginTotal, searchInterests} = useContext(InterestsContext);
+
+  const [searchinput, setSearchInput] = useState('');
 
   const {user, getUser} = useContext(UserContext);
 
@@ -47,25 +50,15 @@ const Interests = (props) => {
     }
   });
 
- 
+  const isDesktop = useMediaQuery({
+    query: '(min-device-width: 768px)'
+  })
 
-  // const marginAdd = () => {
-  //   const table = document.getElementById('interestsbody');
-  //   // console.log(table);
-  //   let sum = 0;
-
-  //   for (let i = 0; i < table.rows.length; i++) {
-  //     // console.log(table.rows[i].cells[6].innerText);
-  //     sum = sum + +table.rows[i].cells[6].innerText;
-  //   }
-  //   return sum.toFixed(2);
-
-  // }
-
-  // useEffect(() => {
-  //   setMarginTotal(marginAdd());
-  // }, [interests]);
-
+  const intSearch = (e, searchinput) => {
+    e.preventDefault();
+    searchInterests(user.user_id, searchinput);
+    setFilter(searchinput);
+  }
 
   
   return (
@@ -73,12 +66,19 @@ const Interests = (props) => {
       <div className="pageheading">
         <h3>INTERESTS</h3>
       </div>
-      <div className="filterbar">
+      {isDesktop ? (
+        <form type='submit' className="desktopsearchbar" onSubmit={(e) => intSearch(e, searchinput)}>
+          <input type='text' value={searchinput}
+        onChange={(e) => setSearchInput(e.target.value)}></input>
+          <button>SEARCH</button>
+          <button onClick={(e) => clearFilter(e)}>RESET</button>
+        </form>): null}
+      {!isDesktop ? (<div className="filterbar">
         <div className="filter">
-          <p>FILTER: </p><p>{filter}</p>
+          <p>{filter}</p>
         </div>
         <button onClick={(e) => clearFilter(e)}>CLEAR</button>
-      </div>
+      </div>) : null}
       <table className='intereststable' id='intereststable'>
         <thead>
           <tr style={{marginRight: '12px'}}>

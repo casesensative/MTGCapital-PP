@@ -31,12 +31,16 @@ const LineChart = () => {
   // }
 
   return (
-    <div className="linechart">
-      <Line 
-      width={100} 
-      height={60} 
-      data={data}/>
-    </div>
+      <div className="linechart">
+        <Line
+        // width={800}
+        // height={400}
+        data={data}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false
+        }}/>
+      </div>
   )
 }
 

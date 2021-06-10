@@ -4,6 +4,7 @@ import {useContext} from 'react';
 import {SearchContext} from '../context/SearchContext';
 import {UserContext} from '../context/UserContext';
 import {InterestsContext} from '../context/InterestsContext';
+import {MarginsContext} from '../context/MarginsContext';
 
 const SearchBar = (props) => {
 
@@ -11,6 +12,7 @@ const SearchBar = (props) => {
   const {user, getUser} = useContext(UserContext);
   const [search, setSearch] = useState('');
   const {setInterests, searchInterests, setFilter} = useContext(InterestsContext);
+  const {setSearchedMargins, searchMargins} = useContext(MarginsContext);
 
   useEffect(() => {
     getUser()
@@ -21,20 +23,19 @@ const SearchBar = (props) => {
   // props.location.pathname
 
   const doSearch = (e, user_id, searchinput) => {
-    // let searchtext = searchinput.split(' ');
-    // setFilter(searchinput);
     e.preventDefault();
     switch (props.location.pathname) {
       case '/search':
         searchFunction(searchinput);
         break;
       case '/interests':
-        console.log('searching interests');
-        console.log(user_id, searchinput);
         searchInterests(user_id, searchinput);
         setFilter(searchinput);
         break;
-    
+      case '/margins':
+        searchMargins(searchinput);
+        setFilter(searchinput);
+        break;
       default:
         alert('Search broke!');
         break;

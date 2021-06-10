@@ -7,6 +7,7 @@
 @import './searchresult';
 @import '../components/AddModal/addmodal';
 @import './interestsmobile';
+@import './desktopheader';
 
 
 
@@ -21,7 +22,9 @@
   width: 100vw;
   height: 70vh;
   background-color: $primary-color;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .interestrow a {
@@ -33,14 +36,16 @@
   width: 100vw;
   height: 70vh;
   background-color: $primary-color;
-  overflow: scroll;
 
   .results {
     width: 100%;
+    height: 81.2%;
     display: flex;
     align-items: center;
     margin-top: 2rem;
     flex-direction: column;
+    overflow: auto;
+
   }
 }
 
@@ -146,6 +151,11 @@
   height: 10rem;
 }
 
+.linechart {
+  width: 80vw;
+  height: 30vh;
+}
+
 
 
 footer {
@@ -156,4 +166,23 @@ footer {
 
 .nodisplay {
   display: none;
+}
+
+
+@media (min-width: 768px) {
+  .intereststable {
+    font-size: 1.2rem;
+  }
+  .marginspage {
+    height: 83vh;
+  }
+  .cardsearch {
+    height: 83vh;
+  }
+  .interestspage {
+    height: 83vh;
+  }
+  .linechart {
+    width: 60vw;
+  }
 }

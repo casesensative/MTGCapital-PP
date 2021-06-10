@@ -108,17 +108,21 @@ table td {
   white-space: nowrap;
 }
 
+.tableWrapper {
+  overflow: auto;
+}
+
 .intereststable {
   width: 96%;
   table-layout: fixed;
-  overflow: hidden;
   font-family: "KoHo", sans-serif;
   font-size: .7rem;
   border: none;
+  text-align: center;
 }
 
 .intereststable thead {
-  text-align: left;
+  text-align: center;
 }
 
 .pageheading {
@@ -131,6 +135,9 @@ table td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pageheading h3 {
@@ -143,7 +150,6 @@ table td {
   width: 80vw;
   height: 4vh;
   background-color: #85A5CB;
-  margin: auto;
   margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,13 +183,8 @@ table td {
   font-family: "Chivo", sans-serif;
   font-weight: 200;
   color: #e2e6f1;
-}
-
-.filterbar .filter p {
   margin-left: 10px;
-  color: #e2e6f1;
   font-style: italic;
-  margin-bottom: 2px;
 }
 
 .filterbar button {
@@ -191,7 +192,18 @@ table td {
   margin-right: 3%;
   font-family: "Chivo", sans-serif;
   font-weight: 300;
-  color: #e2e6f1;
+  font-size: 1rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .filterbar {
+    height: 2rem;
+    width: 12vw;
+  }
+  .filterbar .filter {
+    height: 2rem;
+  }
 }
 
 .searchbar {
@@ -243,6 +255,52 @@ table td {
   font-size: 1rem;
   background-color: #3D546E;
   color: white;
+}
+
+.desktopmarginsearch {
+  margin-top: 10px;
+  width: 80%;
+  height: 10vh;
+}
+
+.desktopsearchbar {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.desktopsearchbar input {
+  width: 75%;
+  height: 2rem;
+  background-color: #85A5CB;
+  width: 300px;
+  border: none;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  padding-left: 8px;
+}
+
+.desktopsearchbar button {
+  all: unset;
+  width: 80px;
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  background-color: #85A5CB;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.desktopsearchbar button:hover {
+  background-color: #3D546E;
 }
 
 .searchresult {
@@ -657,6 +715,102 @@ table td {
   background-color: #678EBB;
 }
 
+.desktopheader {
+  width: 100vw;
+  height: 10vh;
+  background-color: #4B6787;
+  color: #e2e6f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.desktopheader .headerlogo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.desktopheader .headerlogo h1 {
+  font-family: "Gugi", cursive;
+  font-weight: 500;
+  font-size: 2.8rem;
+  color: white;
+  margin-left: 10px;
+}
+
+.desktopheader .headerlogo h3 {
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+.desktopheader .spacer {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.desktopheader .headernav {
+  -webkit-box-flex: 1.3;
+      -ms-flex: 1.3;
+          flex: 1.3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.desktopheader .headernav ul {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.desktopheader .headernav ul a {
+  text-decoration: none;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  color: #e2e6f1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.desktopheader .headernav ul a:hover {
+  color: white;
+  text-shadow: 1px 1px 0px #85A5CB;
+}
+
+.desktopheader .headernav ul li {
+  margin-bottom: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .interestspage {
   width: 100vw;
   height: 70vh;
@@ -667,7 +821,16 @@ table td {
   width: 100vw;
   height: 70vh;
   background-color: #678EBB;
-  overflow: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .interestrow a {
@@ -679,11 +842,11 @@ table td {
   width: 100vw;
   height: 70vh;
   background-color: #678EBB;
-  overflow: scroll;
 }
 
 .cardsearch .results {
   width: 100%;
+  height: 81.2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -695,6 +858,7 @@ table td {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: auto;
 }
 
 .siteheader {
@@ -819,6 +983,11 @@ table td {
   height: 10rem;
 }
 
+.linechart {
+  width: 80vw;
+  height: 30vh;
+}
+
 footer {
   width: 100vw;
   height: 6.2vh;
@@ -827,5 +996,23 @@ footer {
 
 .nodisplay {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .intereststable {
+    font-size: 1.2rem;
+  }
+  .marginspage {
+    height: 83vh;
+  }
+  .cardsearch {
+    height: 83vh;
+  }
+  .interestspage {
+    height: 83vh;
+  }
+  .linechart {
+    width: 60vw;
+  }
 }
 /*# sourceMappingURL=index.css.map */

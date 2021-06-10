@@ -1,0 +1,66 @@
+.desktopheader {
+  width: 100vw;
+  height:10vh;
+  background-color: $dark-color;
+  color: $white;
+  display: flex;
+  
+  .headerlogo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    
+    h1 {
+      @include main-logo;
+      margin-left: 10px;
+
+    }
+  
+    h3 {
+      font-family: $font-sub;
+      font-weight: 300;
+      margin-left: 10px;
+      margin-bottom: 4px;
+    }
+
+  }
+
+  .spacer {
+    flex: 2;
+  }
+  .headernav {
+    flex: 1.3;
+    display: flex;
+
+    ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+
+      a {
+        text-decoration: none;
+        font-family: $font-sub;
+        font-weight: 300;
+        color: $white;
+        @include transition-ease;
+  
+        &:hover {
+          color: white;
+          text-shadow: 1px 1px 0px $light-color;
+        }
+      }
+
+      li {
+        margin-bottom: 4px;
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
