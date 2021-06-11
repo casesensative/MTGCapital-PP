@@ -17,7 +17,6 @@
   width: 80vw;
   height: 4vh;
   background-color: $light-color;
-  // margin: auto;
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
@@ -43,13 +42,6 @@
       font-style: italic; 
 
     }
-    
-    // p {
-    //   margin-left: 10px;
-    //   color: $white;
-    //   font-style: italic;
-    //   margin-bottom: 2px;
-    // }
   }
   button {
     all: unset;

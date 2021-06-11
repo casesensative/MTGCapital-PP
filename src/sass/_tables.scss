@@ -1,6 +1,7 @@
 table {
-  margin: auto;
-  margin-top: 1rem;
+  // margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   color: $white;
   border: 1px solid $white;
   font-family: $font-copy;
@@ -21,7 +22,14 @@ table {
 
 .tableWrapper {
   overflow: auto;
+  width: 100%;
+  height: 84.2%;
+  margin-top: 1rem;
 }
+
+// .tableWrapper::-webkit-scrollbar { 
+//   display: none; 
+//   }
 
 .intereststable {
   width: 96%;
@@ -29,10 +37,13 @@ table {
   font-family: $font-copy;
   font-size: .7rem;
   border: none; 
-  text-align: center;
+  text-align: center; 
 
   thead {
+    background-color: $darkest-color;
     text-align: center;
+    position:sticky;
+    top: 0;
   }
 }
 

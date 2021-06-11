@@ -79,35 +79,36 @@ const Interests = (props) => {
         </div>
         <button onClick={(e) => clearFilter(e)}>CLEAR</button>
       </div>) : null}
-      <table className='intereststable' id='intereststable'>
-        <thead>
-          <tr style={{marginRight: '12px'}}>
-            <th style={{width: '30%'}}>CARD</th>
-            <th>SET</th>
-            <th>F</th>
-            <th>AMT</th>
-            <th>BUY</th>
-            <th>MKT</th>
-            <th>MRGN</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id='interestsbody'>
-         {mappedInterests}
-        </tbody>
-        <tfoot>
-          <tr className='interestsfooter'>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{marginTotal}</td>
-          </tr> 
-        </tfoot>
-
-      </table>
+      <div className="tableWrapper">
+        <table className='intereststable' id='intereststable'>
+          <thead>
+            <tr style={{marginRight: '12px'}}>
+              <th style={{width: '30%'}}>CARD</th>
+              <th>SET</th>
+              <th>F</th>
+              <th>AMT</th>
+              <th>BUY</th>
+              <th>MKT</th>
+              <th>MRGN</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id='interestsbody'>
+           {mappedInterests}
+          </tbody>
+          <tfoot>
+            <tr className='interestsfooter'>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>{marginTotal}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </section>
   )
 }

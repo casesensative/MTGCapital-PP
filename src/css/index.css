@@ -62,36 +62,78 @@
           flex-flow: column wrap;
 }
 
-.loginpage .loginform input {
-  width: 80%;
-  height: 5%;
+.loginpage .loginform .loginputs {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.loginpage .loginform .loginputs input {
+  width: 65%;
+  height: 30%;
   margin-bottom: 4%;
   text-align: center;
   font-size: 16px;
 }
 
-.loginpage .loginform button {
+.loginpage .loginform .logbuttons {
+  width: 80%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.loginpage .loginform .logbuttons button {
   all: unset;
   width: 30%;
-  height: 5%;
+  height: 30%;
   text-align: center;
   margin-bottom: 4%;
   font: normal normal 300 1.1rem "Chivo", sans-serif;
-  background-color: #3D546E;
+  background-color: #85A5CB;
   color: #e2e6f1;
+  cursor: crosshair;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
-.loginpage .loginform button:hover {
-  border-radius: 6px;
-  -webkit-box-shadow: 2px 2px 0 4px #e2e6f1;
-          box-shadow: 2px 2px 0 4px #e2e6f1;
+.loginpage .loginform .logbuttons button:hover {
+  background-color: #3D546E;
+}
+
+@media (min-width: 768px) {
+  .loginpage
+.loginform
+.loginputs input {
+    width: 30%;
+    margin-bottom: 1%;
+  }
+  .loginpage .loginform .logbuttons {
+    width: 30%;
+  }
+  .loginpage {
+    height: 83.8vh;
+  }
 }
 
 table {
-  margin: auto;
-  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   color: #e2e6f1;
   border: 1px solid #e2e6f1;
   font-family: "KoHo", sans-serif;
@@ -110,6 +152,9 @@ table td {
 
 .tableWrapper {
   overflow: auto;
+  width: 100%;
+  height: 84.2%;
+  margin-top: 1rem;
 }
 
 .intereststable {
@@ -122,7 +167,11 @@ table td {
 }
 
 .intereststable thead {
+  background-color: #3D546E;
   text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .pageheading {
@@ -815,6 +864,16 @@ table td {
   width: 100vw;
   height: 70vh;
   background-color: #678EBB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .marginspage {
@@ -840,8 +899,18 @@ table td {
 
 .cardsearch {
   width: 100vw;
-  height: 70vh;
+  min-height: 70vh;
   background-color: #678EBB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cardsearch .results {
@@ -858,7 +927,6 @@ table td {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: auto;
 }
 
 .siteheader {
@@ -992,6 +1060,23 @@ footer {
   width: 100vw;
   height: 6.2vh;
   background-color: #4B6787;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer p {
+  color: white;
+  text-decoration: none;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 .nodisplay {
@@ -1003,13 +1088,13 @@ footer {
     font-size: 1.2rem;
   }
   .marginspage {
-    height: 83vh;
+    height: 83.8vh;
   }
   .cardsearch {
-    height: 83vh;
+    height: 83.8vh;
   }
   .interestspage {
-    height: 83vh;
+    height: 83.8vh;
   }
   .linechart {
     width: 60vw;

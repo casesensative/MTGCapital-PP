@@ -37,29 +37,57 @@
     @include flexCenter;
     flex-flow: column wrap;
 
+    .loginputs {
+      width: 100%;
+      height: 20%;
+      @include flexCenter;
+      flex-direction: column;
+
     input {
-      width: 80%;
-      height: 5%;
+      width: 65%;
+      height: 30%;
       margin-bottom: 4%;
       text-align: center;
       font-size: 16px;
     }
+  }
+    .logbuttons {
+      width: 80%;
+      height: 20%;
+      display: flex;
+      justify-content: space-around;
 
     button {
       all: unset;
       width: 30%;
-      height: 5%;
+      height: 30%;
       text-align: center;
       margin-bottom: 4%;
       font: normal normal 300 1.1rem $font-sub;
-      background-color: $darkest-color;
+      background-color: $light-color;
       color: $white;
+      cursor: crosshair;
       @include transition-ease;
 
       &:hover {
-        border-radius: 6px;
-        box-shadow: 2px 2px 0 4px rgba(226,230,241, 1);
+        background-color: $darkest-color;
       }
     }
+  }
+  }
+}
+
+@media (min-width: 768px) {
+  .loginpage 
+  .loginform 
+  .loginputs input {
+    width: 30%;
+    margin-bottom: 1%;
+  }
+  .loginpage .loginform .logbuttons {
+    width: 30%;
+  }
+  .loginpage {
+    height: 83.8vh;
   }
 }

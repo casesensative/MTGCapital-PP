@@ -48,14 +48,18 @@ const Login = (props) => {
   return (
     <section className="loginpage">
       <form action="submit" className='loginform'>
-        <input type='text' name='email' 
-        value={email} onChange={(e) => setEmail(e.target.value)} 
-        placeholder='Enter your email address'/>
-        <input type='password' name='password' 
-        value={password} onChange={(e) => setPassword(e.target.value)} 
-        placeholder='Enter your password'/>
-        <button type='submit' name='login' onClick={(e) => login(e, email, password)}>LOGIN</button>
-        <button type='submit' name='register' onClick={(e) => register(e, email, password)}>REGISTER</button>
+        <div className="loginputs">
+          <input type='text' name='email'
+          value={email} onChange={(e) => setEmail(e.target.value)}
+          placeholder='Enter your email address'/>
+          <input type='password' name='password'
+          value={password} onChange={(e) => setPassword(e.target.value)}
+          placeholder='Enter your password'/>
+        </div>
+        <div className="logbuttons">
+          <button type='submit' name='login' onClick={(e) => login(e, email, password)}>LOGIN</button>
+          <button type='submit' name='register' onClick={(e) => register(e, email, password)}>REGISTER</button>
+        </div>
       </form>
     </section>
   )
