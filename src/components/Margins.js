@@ -38,7 +38,9 @@ const Margins = () => {
                     sold_date={newDate} 
                     sold_amount={margin.sold_amount} 
                     sold_price={parseFloat(margin.sold_price).toFixed(2)} 
-                    margin={margin.margin} />
+                    margin={margin.margin} 
+                    card_img={margin.imgurl_f} 
+                    purchase={margin.purchaseurl} />
   })
  
 
