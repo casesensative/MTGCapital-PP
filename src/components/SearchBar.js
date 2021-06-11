@@ -11,8 +11,8 @@ const SearchBar = (props) => {
   const {searchFunction} = useContext(SearchContext);
   const {user, getUser} = useContext(UserContext);
   const [search, setSearch] = useState('');
-  const {setInterests, searchInterests, setFilter} = useContext(InterestsContext);
-  const {setSearchedMargins, searchMargins} = useContext(MarginsContext);
+  const {searchInterests, setFilter} = useContext(InterestsContext);
+  const {searchMargins} = useContext(MarginsContext);
 
   useEffect(() => {
     getUser()

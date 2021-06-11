@@ -6,13 +6,10 @@ import {useMediaQuery} from 'react-responsive';
 
 const Interests = (props) => {
 
-  const {interests, setInterests, getInterests, filter, setFilter, marginTotal, setMarginTotal, searchInterests} = useContext(InterestsContext);
+  const {interests, getInterests, filter, setFilter, marginTotal, searchInterests} = useContext(InterestsContext);
 
   const [searchinput, setSearchInput] = useState('');
-
-  const {user, getUser} = useContext(UserContext);
-
-  // const [marginTotal, setMarginTotal] = useState(0);
+  const {user} = useContext(UserContext);
 
 
 
@@ -28,6 +25,7 @@ const Interests = (props) => {
     e.preventDefault();
     setFilter('');
     getInterests(user.user_id);
+    setSearchInput('');
   }
 
 
@@ -38,15 +36,14 @@ const Interests = (props) => {
               interest_id={interest.interest_id}
               card_name={interest.card_name} 
               card_set={interest.card_set} 
-              date_added={interest.date_added} 
+              date_added={date} 
               isfoil={interest.isfoil} 
               amount={interest.amount} 
               buyprice={interest.buyprice} 
               price={interest.price} 
               foilprice={interest.foilprice} 
               img_front={interest.imgurl_f} 
-              purchaseurl={interest.purchaseurl} 
-              interest_id={interest.interest_id} />
+              purchaseurl={interest.purchaseurl} />
     }
   });
 

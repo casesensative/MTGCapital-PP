@@ -2,7 +2,6 @@ import SearchResult from '../components/SearchResult';
 import DesktopSearchResult from '../components/DesktopSearchResult';
 import {useContext, useEffect, useState} from 'react';
 import {SearchContext} from '../context/SearchContext';
-import {UserContext} from '../context/UserContext';
 import {useMediaQuery} from 'react-responsive';
 
 
@@ -11,7 +10,7 @@ import {useMediaQuery} from 'react-responsive';
 
 const CardSearch = (props) => {
 
-  const {results, filter, setFilter, setResults, searchFunction} = useContext(SearchContext);
+  const {results, setResults, searchFunction} = useContext(SearchContext);
   const [searchinput, setSearchInput] = useState('');
   
   let mobileresults = results.map(card => {
@@ -46,43 +45,15 @@ const CardSearch = (props) => {
     query: '(min-device-width: 768px)'
   });
 
-  // const mapMobileResults = () => {
-  //   mobileresults = results.map(card => {
-  //     return (
-  //       <SearchResult key={card.card_id} 
-  //                     card_id={card.card_id} 
-  //                     name={card.card_name} 
-  //                     set={card.card_set} card_img={card.imgurl_f} 
-  //                     card_img_b={card.imgurl_b} foilprice={card.foilprice} 
-  //                     price={card.price} purchase={card.purchaseurl} />
-  //     )
-  //   });
-  // }
-
-  // const mapDesktopResults = () => {
-  //   desktopresults = results.map(card => {
-  //     return (
-  //       <DesktopSearchResult key={card.card_id} 
-  //                     card_id={card.card_id} 
-  //                     name={card.card_name} 
-  //                     set={card.card_set} card_img={card.imgurl_f} 
-  //                     card_img_b={card.imgurl_b} foilprice={card.foilprice} 
-  //                     price={card.price} purchase={card.purchaseurl} />
-  //     )
-  //   });
-  // }
-
   const cardSearch = (e, searchinput) => {
     console.log('hitting card search');
     e.preventDefault();
     searchFunction(searchinput);
-    setFilter(searchinput);
   };
 
   const clearFilter = (e) => {
     e.preventDefault();
     setSearchInput('');
-    setFilter('');
     setResults([]);
   }
 

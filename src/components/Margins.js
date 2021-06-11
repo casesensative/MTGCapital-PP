@@ -10,7 +10,7 @@ import {useMediaQuery} from 'react-responsive';
 const Margins = () => {
   
   const {user} = useContext(UserContext);
-  const {sellHistory, marginsTotal, getMargins, years, setYear, 
+  const {sellHistory, marginsTotal, getMargins, years,
           searched, setSearched, searchMargins} = useContext(MarginsContext);
   const [selectedyear, setSelectedyear] = useState(null);
   const {setFilter, filter} = useContext(InterestsContext);

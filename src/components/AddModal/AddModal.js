@@ -84,7 +84,6 @@ const AddModal = (props) => {
                 onChange={(e) => setBuyprice(e.target.value)}
               />
             </div>
-            {/* <button className='add-button' onClick={() => addInterestFn(card_id, buyprice, amount)}>ADD</button> */}
             <button
               type='submit'
               className="react-add"

@@ -16,26 +16,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Interest = (props) => {
 
-  const {card_name, card_set, date_added, isfoil, amount, buyprice, price, foilprice, img_front, purchaseurl, interest_id} = props;
+  const {card_name, card_set, isfoil, amount, buyprice, price, foilprice, img_front, purchaseurl, interest_id} = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [sellbutton, setSellButton] = useState(false);
   const [modalshow, setModalShow] = useState(false);
   const [margin, setMargin] = useState('');
-
-
-
-  // const setMargins = () => {
-  //   if (isfoil) {
-  //     const margin = parseFloat(foilprice * amount - buyprice * amount).toFixed(2);
-  //     setMargin(margin);
-  //     setMarginTotal((marginTotal) => marginTotal + margin);
-  //   } else {
-  //     const margin = parseFloat(price * amount - buyprice * amount).toFixed(2);
-  //     setMargin(margin);
-  //     setMarginTotal((marginTotal) => marginTotal + margin);
-  //   }
-  // }
 
   useEffect(() => {
     if (isfoil) {
@@ -89,7 +75,7 @@ const Interest = (props) => {
       >
         <img style={{width: '300px'}} src={img_front} alt='card'/>
       </Popover>
-          <a href={purchaseurl} target='_blank' aria-owns={open ? 'mouse-over-popover' : undefined}
+          <a href={purchaseurl} target='_blank' rel="noreferrer" aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}>{card_name}</a>

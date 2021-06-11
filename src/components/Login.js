@@ -3,7 +3,7 @@ import {useLocation} from 'react-router-dom';
 import {UserContext} from '../context/UserContext';
 import {SearchContext} from '../context/SearchContext';
 
-const Login = (props) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');

@@ -1,6 +1,5 @@
 import './css/reset.css';
 import './css/index.css';
-import {useLocation} from 'react-router-dom';
 import Footer from './components/Footer';
 import SiteHeader from './components/SiteHeader';
 import Header from './components/Header';

@@ -2,7 +2,6 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {useContext, useEffect} from 'react';
 import {UserContext} from '../context/UserContext';
-import SearchBar from '../components/SearchBar';
 import {InterestsContext} from '../context/InterestsContext';
 
 const Header = () => {

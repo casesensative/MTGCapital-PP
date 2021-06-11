@@ -20,7 +20,7 @@ const SellModal = (props) => {
   } = props;
   const [sellamount, setSellAmount] = useState('');
   const [sellprice, setSellPrice] = useState('');
-  const [selltoggle, setSellToggle] = useState(false);
+  const [sellToggle, setSellToggle] = useState(false);
 
   let modaltoggle = !modalshow ? "modal-closed" : "addmodal";
 
@@ -97,7 +97,6 @@ const SellModal = (props) => {
               onClick={(e) =>
                 sellInterest(e, interest_id, sellamount, sellprice, amount, buyprice)
               }>
-              {/* {!selltoggle ? <RiAddBoxLine size={32} /> : <RiAddBoxFill size={32}/> } */}
               <p>SELL</p>
             </button>
           </form>

@@ -22,8 +22,7 @@ const DesktopSearchResult = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [addButton, setAddButton] = useState(false);
   const [modalshow, setModalShow] = useState(false);
-  const {card_id, name, set, card_img, card_img_b, price, foilprice, purchase} = props;
-  const [response, setResponse] = useState('')
+  const {name, set, card_img, price, foilprice, purchase} = props;
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -37,7 +36,6 @@ const DesktopSearchResult = (props) => {
 
   const addInterest = (card_id, buypricefixed, amount, isfoil) => {
     axios.post('/api/interest', {card_id, buypricefixed, amount, isfoil}).then(res => {
-      setResponse(res.data);
       alert(res.data);
     }).catch(err => {
       history.push('/');
@@ -52,7 +50,6 @@ const DesktopSearchResult = (props) => {
 
   return (
     <tr className='interestrow'>
-      {/* <td>{date_added}</td> */}
       <td style={{width: '40%'}}>
                 <Popover
         id="mouse-over-popover"
@@ -75,7 +72,7 @@ const DesktopSearchResult = (props) => {
       >
         <img style={{width: '300px'}} src={card_img} alt='card'/>
       </Popover>
-          <a href={purchase} target='_blank' aria-owns={open ? 'mouse-over-popover' : undefined}
+          <a href={purchase} target='_blank' rel="noreferrer" aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}>{name}</a>
