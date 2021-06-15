@@ -15,18 +15,6 @@ const SiteHeader = (props) => {
 
   useEffect(() => {
     getUser();
-    // axios.get('/auth/getuser').then(user => {
-    //   if (!user) {
-    //     props.history.push('/');
-    //     alert('Please login.');
-    //     setSearchbar(false);
-    //   } else {
-    //     setUser(user);
-    //   } 
-    // }).catch(err => {
-    //   props.history.push('/');
-    //   setSearchbar(false);
-    // })
   }, []);
 
  useEffect(() => {
