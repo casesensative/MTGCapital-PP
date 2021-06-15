@@ -15,8 +15,7 @@ const SellModal = (props) => {
     isfoil,
     modalshow,
     setModalShow,
-    interest_id,
-    margin
+    interest_id
   } = props;
   const [sellamount, setSellAmount] = useState('');
   const [sellprice, setSellPrice] = useState('');
