@@ -33,7 +33,7 @@ const Interest = (props) => {
       setMargin(margin);
       // setMarginTotal((marginTotal) => marginTotal + +margin);
     };
-  }, []);
+  }, [amount]);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);

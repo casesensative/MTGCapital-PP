@@ -67,9 +67,9 @@ const logout = () => {
       <div className="line"></div>
       <div className={`dropdown-menu ${menu ? 'dropdown-menu-active' : ''}`} >
         <ul>
-          <Link>
+          {/* <Link>
             <li onClick={() => setMenu(false)}>Profile</li>
-          </Link>
+          </Link> */}
           <Link to='/interests'>
             <li onClick={() => setMenu(false)}>Interests</li>
           </Link>

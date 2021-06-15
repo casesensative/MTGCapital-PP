@@ -1,21 +1,27 @@
-import {Link} from 'react-router-dom';
+import {Link, useHistory, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import {useContext, useEffect} from 'react';
 import {UserContext} from '../context/UserContext';
 import {InterestsContext} from '../context/InterestsContext';
 
 const Header = () => {
-
+  const history = useHistory();
+  const location = useLocation();
   const {setFilter} = useContext(InterestsContext);
   const {getUser, user} = useContext(UserContext);
 
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [location]);
 
   const leavePage = () => {
-    setFilter('');
+    getUser();
+    if (user) {
+    setFilter('')
+    } else {
+      history.push('/')
+    }
   }
 
   const logout = () => {
@@ -34,9 +40,9 @@ const Header = () => {
       <div className="spacer"> </div>
       <div className="headernav">
         {user ? (<ul>
-          <Link>
+          {/* <Link>
             <li onClick={() => leavePage()}>Profile</li>
-          </Link>
+          </Link> */}
           <Link to='/interests'>
             <li onClick={() => leavePage()}>Interests</li>
           </Link>

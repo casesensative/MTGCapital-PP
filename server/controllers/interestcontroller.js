@@ -58,9 +58,9 @@ module.exports = {
 
     console.log('hitting sell endpoint!');
     const db = req.app.get('db');
-    const {interest_id, sellamount, sellprice, margin} = req.body;
+    const {interest_id, sellamount, sellprice, currentmargin} = req.body;
 
-    const addedMargin = await db.interests.sell_interest(interest_id, sellamount, sellprice, margin);
+    const addedMargin = await db.interests.sell_interest(interest_id, sellamount, sellprice, currentmargin);
 
     if (addedMargin) {
       return res.status(200).send('Interest sold. Margin added.');

@@ -28,13 +28,15 @@ const SellModal = (props) => {
     e.preventDefault();
     if (sellamount && amount) {
       if (sellamount <= amount) {
-        if (interest_id && sellamount && sellprice && margin) {
+        if (interest_id && sellamount && sellprice) {
+          let currentmargin = (sellamount * sellprice) - (sellamount * buyprice);
+          console.log('CURRENT-MARGIN:', currentmargin)
           axios
             .post("/api/interests/sell", {
               interest_id,
               sellamount,
               sellprice,
-              margin,
+              currentmargin,
             })
             .then((res) => {
               getInterests(user.user_id);

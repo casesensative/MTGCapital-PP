@@ -114,7 +114,7 @@ const Margins = () => {
               <td></td>
               <td></td>
               <td></td>
-              <td>{marginsTotal}</td>
+              <td>{parseFloat(marginsTotal).toFixed(2)}</td>
             </tr>
           </tfoot>
         </table>
