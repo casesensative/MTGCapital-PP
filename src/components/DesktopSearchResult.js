@@ -22,6 +22,7 @@ const DesktopSearchResult = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [addButton, setAddButton] = useState(false);
   const [modalshow, setModalShow] = useState(false);
+  const [rowStyle, setRowStyle] = useState({});
   const {name, set, card_img, price, foilprice, purchase} = props;
 
   const handlePopoverOpen = (event) => {
@@ -43,13 +44,23 @@ const DesktopSearchResult = (props) => {
     });
   }
 
+  const addOnHover = () => {
+    setAddButton(true);
+    setRowStyle({backgroundColor: '#4B6787'})
+  }
+
+  const addOffHover = () => {
+    setAddButton(false);
+    setRowStyle({});
+  }
+
  
 
 
 
 
   return (
-    <tr className='interestrow'>
+    <tr className='interestrow' style={rowStyle}>
       <td style={{width: '40%'}}>
                 <Popover
         id="mouse-over-popover"
@@ -81,8 +92,8 @@ const DesktopSearchResult = (props) => {
       <td>{price ? price : null}</td>
       <td>{foilprice ? foilprice : null}</td>
       <td><div className="addbutton" 
-      onMouseEnter={() => setAddButton(true)} 
-      onMouseLeave={() => setAddButton(false)} 
+      onMouseOver={() => addOnHover()} 
+      onMouseOut={() => addOffHover()} 
       onClick={() => setModalShow(true)} >
       {!addButton ? <AiOutlinePlusSquare size={12} /> : 
       <AiFillPlusSquare size={12} />}</div></td>

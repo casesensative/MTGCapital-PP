@@ -1,12 +1,13 @@
 @import './variables';
 @import './mixins';
+@import './searchbar';
 @import './loginpage';
 @import './tables';
 @import './pagehead-filter';
-@import './searchbar';
 @import './searchresult';
 @import '../components/AddModal/addmodal';
 @import './desktopheader';
+
 
 
 
@@ -27,6 +28,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.interestrow {
+  @include transition-ease;
 }
 
 .interestrow a {
@@ -202,3 +206,5 @@ footer {
     width: 60vw;
   }
 }
+
+

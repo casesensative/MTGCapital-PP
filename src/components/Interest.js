@@ -18,6 +18,7 @@ const Interest = (props) => {
 
   const {card_name, card_set, isfoil, amount, buyprice, price, foilprice, img_front, purchaseurl, interest_id} = props;
   const classes = useStyles();
+  const [rowStyle, setRowStyle] = useState({});
   const [anchorEl, setAnchorEl] = useState(null);
   const [sellbutton, setSellButton] = useState(false);
   const [modalshow, setModalShow] = useState(false);
@@ -45,13 +46,21 @@ const Interest = (props) => {
 
   const open = Boolean(anchorEl);
 
- 
+  const sellOnHover = () => {
+    setSellButton(true);
+    setRowStyle({backgroundColor: '#4B6787'})
+  }
+
+  const sellOffHover = () => {
+    setSellButton(false);
+    setRowStyle({});
+  }
 
 
 
 
   return (
-    <tr className='interestrow'>
+    <tr className='interestrow' style={rowStyle}>
       {/* <td>{date_added}</td> */}
       <td style={{width: '40%'}}>
                 <Popover
@@ -87,8 +96,8 @@ const Interest = (props) => {
       <td>{isfoil ? foilprice : price}</td>
       <td id='margin' style={margin < 0 ? {color: 'red'} : {color: 'white'}}>{margin}</td>
       <td><div className="sellbutton" 
-      onMouseEnter={() => setSellButton(true)} 
-      onMouseLeave={() => setSellButton(false)} 
+      onMouseEnter={() => sellOnHover()} 
+      onMouseLeave={() => sellOffHover()} 
       onClick={() => setModalShow(true)} >
       {!sellbutton ? <AiOutlineMinusSquare size={12} /> : 
       <AiFillMinusSquare size={12} />}</div></td>

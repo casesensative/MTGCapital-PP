@@ -7,10 +7,14 @@ const searchControl = require('./controllers/searchcontroller');
 const auth = require('./middleware/authCheck');
 const interestControl = require('./controllers/interestcontroller');
 const marginsControl = require('./controllers/marginscontroller');
-
+const path = require('path');
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
 const app = express();
+
+
+
+
 
 app.use(express.json());
 app.use(session({
@@ -58,3 +62,10 @@ app.post('/api/interests/sell', auth.authCheck, interestControl.sell_interest);
 
 app.get('/api/margins/:user_id', auth.authCheck, marginsControl.get_margins);
 app.get('/api/margins/:user_id/:searchtext', auth.authCheck, marginsControl.search_margins);
+
+
+app.use(express.static(__dirname + '/../build'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});

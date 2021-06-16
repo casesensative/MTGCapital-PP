@@ -7,7 +7,8 @@ import {UserProvider} from './context/UserContext';
 import {SearchProvider} from './context/SearchContext';
 import {InterestsProvider} from './context/InterestsContext';
 import {MarginsProvider} from './context/MarginsContext';
-import {HashRouter as Router} from 'react-router-dom';
+import {HashRouter, BrowserRouter} from 'react-router-dom';
+const Router = process.env.NODE_ENV === 'development' ? HashRouter : BrowserRouter;
 
 ReactDOM.render(
   <React.StrictMode>

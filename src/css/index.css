@@ -1,3 +1,100 @@
+.searchbar {
+  position: absolute;
+  top: 6rem;
+  margin-left: 10%;
+  width: 80vw;
+  height: 2rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0px;
+  border: 1px solid black;
+}
+
+.searchbar form {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.searchbar form input {
+  border-radius: 0px;
+  height: 70%;
+  width: 70%;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  padding-left: 8px;
+}
+
+.searchbar form button {
+  all: unset;
+  width: 30%;
+  height: 2rem;
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  background-color: #3D546E;
+  color: white;
+}
+
+.desktopmarginsearch {
+  margin-top: 10px;
+  width: 80%;
+  height: 10vh;
+}
+
+.desktopsearchbar {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.desktopsearchbar input {
+  width: 75%;
+  height: 2rem;
+  background-color: #85A5CB;
+  width: 300px;
+  border: none;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  padding-left: 8px;
+}
+
+.desktopsearchbar button {
+  all: unset;
+  width: 80px;
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  background-color: #85A5CB;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.desktopsearchbar button:hover {
+  background-color: #3D546E;
+}
+
 .loginheader {
   width: 100vw;
   height: 10vh;
@@ -255,103 +352,6 @@ table td {
   }
 }
 
-.searchbar {
-  position: absolute;
-  top: 6rem;
-  margin-left: 10%;
-  width: 80vw;
-  height: 2rem;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border-radius: 0px;
-  border: 1px solid black;
-}
-
-.searchbar form {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.searchbar form input {
-  border-radius: 0px;
-  height: 70%;
-  width: 70%;
-  font-family: "Chivo", sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  padding-left: 8px;
-}
-
-.searchbar form button {
-  all: unset;
-  width: 30%;
-  height: 2rem;
-  text-align: center;
-  font-family: "Chivo", sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  background-color: #3D546E;
-  color: white;
-}
-
-.desktopmarginsearch {
-  margin-top: 10px;
-  width: 80%;
-  height: 10vh;
-}
-
-.desktopsearchbar {
-  margin-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.desktopsearchbar input {
-  width: 75%;
-  height: 2rem;
-  background-color: #85A5CB;
-  width: 300px;
-  border: none;
-  font-family: "Chivo", sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  padding-left: 8px;
-}
-
-.desktopsearchbar button {
-  all: unset;
-  width: 80px;
-  text-align: center;
-  font-family: "Chivo", sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  background-color: #85A5CB;
-  color: white;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-
-.desktopsearchbar button:hover {
-  background-color: #3D546E;
-}
-
 .searchresult {
   width: 80%;
   height: 10rem;
@@ -523,14 +523,15 @@ table td {
 
 .addmodal .modal .modal-content .addcard input[name="card_amount"] {
   margin-left: 76px;
-  margin-top: 2px;
+  margin-top: 6px;
+  margin-bottom: 16px;
   width: 40px;
   text-align: center;
   font-size: 16px;
 }
 
 .addmodal .modal .modal-content .addcard input[name="buyprice"] {
-  margin-top: 2px;
+  margin-top: 6px;
   width: 80px;
   text-align: center;
   font-size: 16px;
@@ -884,6 +885,11 @@ table td {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.interestrow {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .interestrow a {
