@@ -83,7 +83,7 @@ const Margins = () => {
         <button onClick={(e) => clearFilter(e)}>CLEAR</button>
       </div>) : null}
       
-      {!searched ? ( <div className='yeardropdown' style={{marginTop: '10px'}}>
+      {!searched ? ( <div className='yeardropdown' style={{marginTop: '20px'}}>
         <select onChange={(e) => setSelectedyear(e.target.value)}>
           {yearDropDown}
         </select>
