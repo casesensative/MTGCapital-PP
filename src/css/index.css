@@ -13,6 +13,7 @@
           justify-content: space-between;
   border-radius: 0px;
   border: 1px solid black;
+  font-family: "Chivo", sans-serif;
 }
 
 .searchbar form {
@@ -29,7 +30,7 @@
 
 .searchbar form input {
   border-radius: 0px;
-  height: 70%;
+  height: 80%;
   width: 70%;
   font-family: "Chivo", sans-serif;
   font-weight: 300;

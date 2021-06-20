@@ -10,6 +10,7 @@
   justify-content: space-between;
   border-radius: 0px;
   border: 1px solid black;
+  font-family: $font-sub;
 
   form {
     width: 100%;
@@ -21,7 +22,7 @@
 
     input {
       border-radius: 0px;
-      height: 70%;
+      height: 80%;
       width: 70%;
       font-family: $font-sub;
       font-weight: 300;
@@ -103,3 +104,5 @@ form[type=submit] button {
 form[type=submit] button:hover {
   background-color: $darkest-color;
 }
+
+
