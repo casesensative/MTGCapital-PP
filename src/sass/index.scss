@@ -31,6 +31,10 @@
 }
 .interestrow {
   @include transition-ease;
+
+  &:hover {
+    background-color: #4B6787;
+  }
 }
 
 .interestrow a {

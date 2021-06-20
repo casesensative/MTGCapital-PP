@@ -46,21 +46,12 @@ const Interest = (props) => {
 
   const open = Boolean(anchorEl);
 
-  const sellOnHover = () => {
-    setSellButton(true);
-    setRowStyle({backgroundColor: '#4B6787'})
-  }
-
-  const sellOffHover = () => {
-    setSellButton(false);
-    setRowStyle({});
-  }
 
 
 
 
   return (
-    <tr className='interestrow' style={rowStyle}>
+    <tr className='interestrow'>
       {/* <td>{date_added}</td> */}
       <td style={{width: '40%'}}>
                 <Popover
@@ -96,8 +87,8 @@ const Interest = (props) => {
       <td>{isfoil ? foilprice : price}</td>
       <td id='margin' style={margin < 0 ? {color: 'red'} : {color: 'white'}}>{margin}</td>
       <td><div className="sellbutton" 
-      onMouseEnter={() => sellOnHover()} 
-      onMouseLeave={() => sellOffHover()} 
+      onMouseEnter={() => setSellButton(true)} 
+      onMouseLeave={() => setSellButton(false)} 
       onClick={() => setModalShow(true)} >
       {!sellbutton ? <AiOutlineMinusSquare size={12} /> : 
       <AiFillMinusSquare size={12} />}</div></td>
