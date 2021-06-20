@@ -47,10 +47,6 @@ const DesktopSearchResult = (props) => {
 
 
  
-
-
-
-
   return (
     <tr className='interestrow'>
       <td style={{width: '40%'}}>
