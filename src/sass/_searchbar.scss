@@ -78,7 +78,7 @@
     font-size: 1rem;
     background-color: $light-color;
     color: white;
-    cursor: pointer;
+    cursor: crosshair;
     @include transition-ease;
 
     &:hover {
@@ -98,7 +98,7 @@ form[type=submit] button {
   font-size: 1rem;
   background-color: $light-color;
   color: white;
-  cursor: pointer;
+  cursor: crosshair;
   @include transition-ease;
 }
 form[type=submit] button:hover {

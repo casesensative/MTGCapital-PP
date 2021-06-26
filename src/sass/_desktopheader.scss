@@ -48,6 +48,7 @@
         font-weight: 300;
         color: $white;
         @include transition-ease;
+        cursor: crosshair;
   
         &:hover {
           color: white;

@@ -4,7 +4,8 @@ const Footer = () => {
 
   return (
     <footer>
-      <p>Copyright © 2021 - MTGCapital</p>
+     <a href="mtg.capital.app@gmail.com"><p>Contact</p></a> 
+     <p>Copyright © 2021 - MTGCapital</p>
     </footer>
   )
 }

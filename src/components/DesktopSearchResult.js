@@ -80,11 +80,11 @@ const DesktopSearchResult = (props) => {
       <td>{price ? price : null}</td>
       <td>{foilprice ? foilprice : null}</td>
       <td><div className="addbutton" 
-      onMouseOver={() => setAddButton(true)} 
-      onMouseOut={() => setAddButton(false)} 
+      onMouseEnter={() => setAddButton(true)} 
+      onMouseLeave={() => setAddButton(false)} 
       onClick={() => setModalShow(true)} >
-      {!addButton ? <AiOutlinePlusSquare size={12} /> : 
-      <AiFillPlusSquare size={12} />}</div></td>
+      {!addButton ? <AiOutlinePlusSquare style={{cursor: 'crosshair'}} size={12} /> : 
+      <AiFillPlusSquare style={{cursor: 'crosshair'}} size={12} />}</div></td>
       <AddModal modalshow={modalshow} setModalShow={setModalShow} 
        card_id={props.card_id} 
        addInterestFn={addInterest} 

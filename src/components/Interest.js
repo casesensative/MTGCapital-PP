@@ -90,8 +90,8 @@ const Interest = (props) => {
       onMouseEnter={() => setSellButton(true)} 
       onMouseLeave={() => setSellButton(false)} 
       onClick={() => setModalShow(true)} >
-      {!sellbutton ? <AiOutlineMinusSquare size={12} /> : 
-      <AiFillMinusSquare size={12} />}</div></td>
+      {!sellbutton ? <AiOutlineMinusSquare size={12} style={{cursor: 'crosshair'}} /> : 
+      <AiFillMinusSquare style={{cursor: 'crosshair'}} size={12} />}</div></td>
       <SellModal modalshow={modalshow} setModalShow={setModalShow} 
       card_name={card_name} card_set={card_set} amount={amount} buyprice={buyprice} 
       isfoil={isfoil} interest_id={interest_id} margin={margin}/>
